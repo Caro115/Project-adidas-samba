@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AdBannerInstagram from "../components/AdBannerInstagram.astro";
+import AdBannerTikTok from "../components/AdBannerTikTok.astro";
+import VideoShowcase from "../components/VideoShowcase.astro";
+---
+
+<BaseLayout
+  title="Adidas Samba | Campaigns and Video"
+  description="Dedicated campaign page with social ad banners and embedded videos."
+>
+  <section class="page-intro">
+    <p class="section-kicker mb-3">Section 03</p>
+    <h1 class="section-title mb-4">Campaigns and Video Elements</h1>
+    <p class="muted-copy max-w-3xl">
+      This page groups communication assets in one place: social ad concepts,
+      banner-style callouts, and video material for storytelling.
+    </p>
+  </section>
+
+  <section class="section-shell py-10">
+    <div class="grid md:grid-cols-2 gap-6">
+      <AdBannerInstagram />
+      <AdBannerTikTok />
+    </div>
+  </section>
+
+  <VideoShowcase />
+
+  <section class="section-shell pb-20">
+    <div class="glass-card p-7 md:p-9">
+      <p class="section-kicker mb-3">Execution plan</p>
+      <h2 class="section-title mb-4">Suggested campaign sequence</h2>
+      <ol class="space-y-3 text-zinc-300 leading-relaxed">
+        <li><span class="text-white font-semibold">1.</span> Launch teaser clips to build pre-release curiosity.</li>
+        <li><span class="text-white font-semibold">2.</span> Publish Instagram editorial visuals for brand storytelling.</li>
+        <li><span class="text-white font-semibold">3.</span> Activate TikTok trend content for reach and participation.</li>
+      </ol>
+    </div>
+  </section>
+</BaseLayout>

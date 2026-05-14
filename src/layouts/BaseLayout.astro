@@ -5,7 +5,7 @@ const {
   description = "Adidas Samba market analysis project with dedicated pages for value proposition, pricing, campaigns, and economic rationale."
 } = Astro.props;
 
-const normalizePath = (path) =>
+const normalizePath = (path: string) =>
   path.endsWith("/") && path !== "/" ? path.slice(0, -1) : path;
 
 const currentPath = normalizePath(Astro.url.pathname);

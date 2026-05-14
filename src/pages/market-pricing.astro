@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PriceTag from "../components/PriceTag.astro";
+---
+
+<BaseLayout
+  title="Adidas Samba | Market Pricing"
+  description="Dedicated page for Adidas Samba pricing and value-based positioning."
+>
+  <section class="page-intro">
+    <p class="section-kicker mb-3">Section 02</p>
+    <h1 class="section-title mb-4">Market Pricing</h1>
+    <p class="muted-copy max-w-3xl">
+      This page isolates the pricing conversation: where the current range comes from,
+      why consumers accept it, and what supports a premium over generic alternatives.
+    </p>
+  </section>
+
+  <PriceTag />
+
+  <section class="section-shell pb-20">
+    <div class="grid md:grid-cols-3 gap-4">
+      <article class="glass-card p-6">
+        <p class="section-kicker mb-2">Signal</p>
+        <h3 class="panel-title">Brand Equity</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          Brand memory and recognizability allow Adidas to protect margins in a crowded segment.
+        </p>
+      </article>
+      <article class="glass-card p-6">
+        <p class="section-kicker mb-2">Market force</p>
+        <h3 class="panel-title">Trend-Led Demand</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          Social media momentum increases perceived scarcity and strengthens willingness to pay.
+        </p>
+      </article>
+      <article class="glass-card p-6">
+        <p class="section-kicker mb-2">Constraint</p>
+        <h3 class="panel-title">Substitutes Exist</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          Competitors limit pricing power, but product differentiation prevents perfect substitution.
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

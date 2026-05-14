@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ValueProposition from "../components/ValueProposition.astro";
+---
+
+<BaseLayout
+  title="Adidas Samba | Value Proposition"
+  description="Dedicated page describing the Adidas Samba value proposition and consumer appeal."
+>
+  <section class="page-intro">
+    <p class="section-kicker mb-3">Section 01</p>
+    <h1 class="section-title mb-4">Value Proposition</h1>
+    <p class="muted-copy max-w-3xl">
+      This page focuses on the core value drivers behind Adidas Samba:
+      identity signaling, cultural relevance, and broad styling compatibility.
+    </p>
+  </section>
+
+  <ValueProposition />
+
+  <section class="section-shell pb-20">
+    <div class="grid md:grid-cols-3 gap-4">
+      <article class="glass-card p-6">
+        <p class="section-kicker mb-2">Driver 1</p>
+        <h3 class="panel-title">Cultural Legacy</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          A long product history adds credibility and keeps the model recognizable across generations.
+        </p>
+      </article>
+      <article class="glass-card p-6">
+        <p class="section-kicker mb-2">Driver 2</p>
+        <h3 class="panel-title">Wardrobe Versatility</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          A slim silhouette and neutral palette allow Samba to fit casual, smart-casual, and fashion-led outfits.
+        </p>
+      </article>
+      <article class="glass-card p-6">
+        <p class="section-kicker mb-2">Driver 3</p>
+        <h3 class="panel-title">Social Signaling</h3>
+        <p class="text-zinc-400 text-sm leading-relaxed">
+          Buyers perceive symbolic value through trend alignment and association with creators and influencers.
+        </p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

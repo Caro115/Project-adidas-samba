@@ -1,37 +1,43 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-import ValueProposition from "../components/ValueProposition.astro";
-import PriceTag from "../components/PriceTag.astro";
-import AdBannerInstagram from "../components/AdBannerInstagram.astro";
-import AdBannerTikTok from "../components/AdBannerTikTok.astro";
-import EconomicJustification from "../components/EconomicJustification.astro";
+import PromoBanner from "../components/PromoBanner.astro";
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Adidas Samba | Overview"
+  description="Overview page for the Adidas Samba project with links to separate sections."
+>
   <Hero />
-  <ValueProposition />
-  <PriceTag />
-  <section class="section-shell py-20">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-8">
-      <div>
-        <p class="section-kicker mb-3">Campañas digitales</p>
-        <h2 class="section-title">
-          Publicidad simulada
-        </h2>
-      </div>
-      <p class="text-zinc-400 leading-relaxed max-w-xl">
-        Dos formatos de comunicación enfocados en awareness y tendencia:
-        uno para estética editorial en Instagram y otro para tracción viral
-        en TikTok.
-      </p>
-    </div>
+  <PromoBanner />
 
-    <div class="grid md:grid-cols-2 gap-6">
-      <AdBannerInstagram />
-      <AdBannerTikTok />
+  <section class="section-shell py-20">
+    <p class="section-kicker mb-3">Project navigation</p>
+    <h2 class="section-title mb-4">
+      Explore each topic on a dedicated page
+    </h2>
+    <p class="text-zinc-400 leading-relaxed max-w-3xl">
+      The project is now split into separate pages so each section has its own
+      space: value proposition, pricing, campaigns and videos, and economic analysis.
+    </p>
+
+    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <a href="/value-proposition" class="panel-link">
+        <h3 class="panel-title">Value Proposition</h3>
+        <p class="text-zinc-400 text-sm">Why consumers choose Samba beyond utility.</p>
+      </a>
+      <a href="/market-pricing" class="panel-link">
+        <h3 class="panel-title">Market Pricing</h3>
+        <p class="text-zinc-400 text-sm">Price logic, premium perception, and demand effects.</p>
+      </a>
+      <a href="/campaigns" class="panel-link">
+        <h3 class="panel-title">Campaigns & Video</h3>
+        <p class="text-zinc-400 text-sm">Social ad concepts plus embedded video elements.</p>
+      </a>
+      <a href="/economic-analysis" class="panel-link">
+        <h3 class="panel-title">Economic Analysis</h3>
+        <p class="text-zinc-400 text-sm">Monopolistic competition and strategic implications.</p>
+      </a>
     </div>
   </section>
-
-  <EconomicJustification />
 </BaseLayout>
