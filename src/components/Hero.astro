@@ -1,29 +1,46 @@
-<section class="min-h-screen flex items-center bg-[#f8f6f1] px-6">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
-    <div>
-      <p class="uppercase tracking-[0.2em] text-sm text-neutral-600 mb-4">
+<section class="section-shell min-h-[92vh] flex items-center py-20">
+  <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
+    <div class="space-y-8">
+      <p class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 section-kicker text-zinc-300">
         Adidas Originals
       </p>
 
-      <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight leading-[0.95] text-white">
         Samba
       </h1>
 
-      <p class="text-lg text-neutral-700 mb-8 leading-relaxed">
-        El ícono retro que pasó de las canchas al streetwear global.
-        Diseño clásico, identidad cultural y estilo atemporal.
+      <p class="text-lg md:text-xl text-zinc-300 leading-relaxed max-w-xl">
+        A retro icon that moved from indoor courts to global streetwear.
+        Classic design, cultural identity, and long-term style relevance.
       </p>
 
-      <button class="bg-black text-white px-8 py-4 rounded-xl font-semibold hover:scale-105 transition">
-        Explorar colección
-      </button>
+      <div class="flex flex-wrap gap-4">
+        <a href="/campaigns" class="rounded-xl bg-white px-7 py-3.5 font-semibold text-zinc-900 transition hover:-translate-y-0.5 hover:bg-zinc-200">
+          Explore campaigns
+        </a>
+        <a href="/economic-analysis" class="rounded-xl border border-white/20 bg-white/5 px-7 py-3.5 font-semibold text-zinc-100 transition hover:bg-white/10">
+          View analysis
+        </a>
+      </div>
+
+      <div class="flex items-center gap-8 pt-2">
+        <div>
+          <p class="text-2xl font-semibold text-white">1950</p>
+          <p class="text-sm text-zinc-400">Model origin</p>
+        </div>
+        <div>
+          <p class="text-2xl font-semibold text-white">Global</p>
+          <p class="text-sm text-zinc-400">Cultural impact</p>
+        </div>
+      </div>
     </div>
 
-    <div>
+    <div class="relative">
+      <div class="absolute -inset-8 -z-10 rounded-[2.5rem] bg-white/10 blur-3xl"></div>
       <img
         src="/images/Samba.jpg"
         alt="Adidas Samba"
-        class="rounded-3xl shadow-xl"
+        class="w-full rounded-[2rem] border border-white/10 shadow-[0_24px_80px_-30px_rgba(0,0,0,0.8)] object-cover"
       />
     </div>
   </div>
