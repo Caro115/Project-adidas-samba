@@ -1,33 +1,124 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import EconomicJustification from "../components/EconomicJustification.astro";
+
+const competitorChartData = [
+  { brand: "Adidas Samba", brandValue: "95/100", brandScore: 95 },
+  { brand: "Nike Cortez", brandValue: "90/100", brandScore: 90 },
+  { brand: "Puma Palermo", brandValue: "78/100", brandScore: 78 },
+  { brand: "Converse Chuck Taylor", brandValue: "88/100", brandScore: 88 },
+  { brand: "New Balance 550", brandValue: "86/100", brandScore: 86 }
+];
+
+const academicSummary = [
+  {
+    title: "Theory alignment",
+    detail: "The market shows many firms but differentiated products, matching monopolistic competition."
+  },
+  {
+    title: "Elasticity insight",
+    detail: "Brand equity and symbolic value reduce substitution speed and increase pricing tolerance."
+  },
+  {
+    title: "Strategic outcome",
+    detail: "Influencer and cultural campaigns sustain pricing power beyond pure functional utility."
+  }
+];
 ---
 
 <BaseLayout
-  title="Adidas Samba | Economic Analysis"
-  description="Dedicated page for the economic framework behind Adidas Samba market behavior."
+  title="Adidas Samba | Economic Analysis and Data Visualization"
+  description="Dedicated economic analysis page with demand elasticity, monopolistic competition visual explanation, and final academic conclusion."
 >
   <section class="page-intro">
     <p class="section-kicker mb-3">Section 04</p>
-    <h1 class="section-title mb-4">Economic Analysis</h1>
+    <h1 class="section-title mb-4">Economic Analysis and Data Visualization</h1>
     <p class="muted-copy max-w-3xl">
-      This page isolates the theoretical and strategic interpretation of Samba's
-      market performance within monopolistic competition.
+      This page provides visual academic support for the project’s core microeconomic argument:
+      product differentiation and symbolic value create measurable pricing power in monopolistic competition.
     </p>
   </section>
 
-  <EconomicJustification />
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="mb-6 sm:mb-8">
+      <p class="section-kicker mb-3">Data visualization focus</p>
+      <h2 class="section-title mb-4">Graph-based evidence for professor evaluation</h2>
+    </div>
 
-  <section class="section-shell pb-20">
-    <div class="glass-card p-7 md:p-9">
-      <p class="section-kicker mb-3">Key takeaway</p>
-      <h2 class="section-title mb-4">Differentiation protects value in competitive markets</h2>
-      <p class="text-zinc-300 leading-relaxed max-w-4xl">
-        Samba demonstrates that product identity, cultural relevance, and
-        communication strategy can sustain premium pricing even when close
-        substitutes exist. The economic advantage comes from perceived
-        differentiation rather than technical exclusivity.
-      </p>
+    <div class="grid gap-6 sm:gap-8 xl:grid-cols-2">
+      <article class="glass-card p-6 sm:p-8">
+        <p class="mb-3 sm:mb-4 text-xs uppercase tracking-[0.18em] text-zinc-400">Demand elasticity graph</p>
+        <svg viewBox="0 0 360 230" class="h-auto w-full rounded-2xl border border-white/10 bg-black/35 p-3 sm:p-4">
+          <line x1="42" y1="20" x2="42" y2="190" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"></line>
+          <line x1="42" y1="190" x2="332" y2="190" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"></line>
+          <line x1="42" y1="58" x2="332" y2="58" stroke="rgba(255,255,255,0.09)" stroke-width="1"></line>
+          <line x1="42" y1="100" x2="332" y2="100" stroke="rgba(255,255,255,0.09)" stroke-width="1"></line>
+          <line x1="42" y1="145" x2="332" y2="145" stroke="rgba(255,255,255,0.09)" stroke-width="1"></line>
+          <path d="M52 32 C108 64, 184 96, 328 176" fill="none" stroke="#d4bc9e" stroke-width="4"></path>
+          <path d="M52 54 C114 92, 195 132, 328 186" fill="none" stroke="#b8c1cc" stroke-width="4" stroke-dasharray="8 6"></path>
+          <text x="8" y="26" fill="#d4d4d8" font-size="11">Price</text>
+          <text x="274" y="210" fill="#d4d4d8" font-size="11">Quantity demanded</text>
+          <text x="86" y="49" fill="#d4bc9e" font-size="11">Samba demand (Eᵈ ≈ -0.7)</text>
+          <text x="110" y="130" fill="#b8c1cc" font-size="11">Generic demand (Eᵈ ≈ -1.5)</text>
+        </svg>
+        <p class="mt-4 sm:mt-6 text-sm leading-relaxed text-zinc-300">
+          Samba demand is less elastic than generic sneakers because symbolic value delays substitution behavior.
+        </p>
+      </article>
+
+      <article class="glass-card p-6 sm:p-8">
+        <p class="mb-3 sm:mb-4 text-xs uppercase tracking-[0.18em] text-zinc-400">Monopolistic competition explanation graph</p>
+        <svg viewBox="0 0 360 230" class="h-auto w-full rounded-2xl border border-white/10 bg-black/35 p-3 sm:p-4">
+          <line x1="44" y1="22" x2="44" y2="190" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"></line>
+          <line x1="44" y1="190" x2="334" y2="190" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"></line>
+          <line x1="44" y1="64" x2="334" y2="64" stroke="rgba(255,255,255,0.09)" stroke-width="1"></line>
+          <line x1="44" y1="106" x2="334" y2="106" stroke="rgba(255,255,255,0.09)" stroke-width="1"></line>
+          <line x1="44" y1="148" x2="334" y2="148" stroke="rgba(255,255,255,0.09)" stroke-width="1"></line>
+          <line x1="136" y1="22" x2="136" y2="190" stroke="rgba(255,255,255,0.08)" stroke-width="1"></line>
+          <line x1="228" y1="22" x2="228" y2="190" stroke="rgba(255,255,255,0.08)" stroke-width="1"></line>
+          <circle cx="267" cy="56" r="10" fill="#d4bc9e"></circle>
+          <circle cx="227" cy="87" r="9" fill="#94a3b8"></circle>
+          <circle cx="186" cy="112" r="8" fill="#7c8b9d"></circle>
+          <circle cx="150" cy="132" r="8" fill="#9f7b61"></circle>
+          <circle cx="241" cy="102" r="8" fill="#c1a589"></circle>
+          <text x="279" y="57" fill="#e5e7eb" font-size="10">Samba</text>
+          <text x="239" y="88" fill="#e5e7eb" font-size="10">Cortez</text>
+          <text x="197" y="114" fill="#e5e7eb" font-size="10">Palermo</text>
+          <text x="162" y="134" fill="#e5e7eb" font-size="10">Chuck</text>
+          <text x="253" y="104" fill="#e5e7eb" font-size="10">NB 550</text>
+          <text x="8" y="26" fill="#d4d4d8" font-size="11">Pricing power</text>
+          <text x="224" y="210" fill="#d4d4d8" font-size="11">Perceived differentiation</text>
+        </svg>
+        <p class="mt-4 sm:mt-6 text-sm leading-relaxed text-zinc-300">
+          Many firms coexist, but each competes through differentiated positioning instead of identical products.
+        </p>
+      </article>
+
+      <article class="glass-card p-6 sm:p-8 xl:col-span-2">
+        <p class="mb-3 sm:mb-4 text-xs uppercase tracking-[0.18em] text-zinc-400">Competitor comparison chart</p>
+        <div class="space-y-4 sm:space-y-6 rounded-2xl border border-white/10 bg-black/30 p-4 sm:p-6">
+          {competitorChartData.map((item) => (
+            <div>
+              <div class="mb-2 flex items-center justify-between text-sm text-zinc-300">
+                <span>{item.brand}</span>
+                <span>{item.brandValue}</span>
+              </div>
+              <div class="h-3 sm:h-4 rounded-full bg-white/10">
+                <div
+                  class="h-full rounded-full bg-gradient-to-r from-[#d8bfa0] to-[#8f6346]"
+                  style={`width: ${item.brandScore}%`}
+                ></div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="mt-4 sm:mt-6 text-sm leading-relaxed text-zinc-300">
+          Higher symbolic brand value supports stronger non-price competition and improved margin protection.
+        </p>
+      </article>
+    </div>
+  </section>
+
+      </article>
     </div>
   </section>
 </BaseLayout>

@@ -4,7 +4,6 @@ const {
   title = "Adidas Samba | Monopolistic Competition",
   description = "Adidas Samba market analysis project with dedicated pages for value proposition, pricing, campaigns, and economic rationale."
 } = Astro.props;
-
 const normalizePath = (path: string) =>
   path.endsWith("/") && path !== "/" ? path.slice(0, -1) : path;
 
@@ -13,10 +12,12 @@ const currentPath = normalizePath(Astro.url.pathname);
 const navLinks = [
   { href: "/", label: "Overview" },
   { href: "/value-proposition", label: "Value Proposition" },
-  { href: "/market-pricing", label: "Pricing" },
-  { href: "/campaigns", label: "Campaigns & Video" },
+  { href: "/market-pricing", label: "Pricing & Competitors" },
+  { href: "/campaigns", label: "Campaigns" },
   { href: "/economic-analysis", label: "Economic Analysis" }
 ];
+
+const year = new Date().getFullYear();
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -30,11 +31,11 @@ const navLinks = [
     <title>{title}</title>
   </head>
   <body>
-    <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.13),_transparent_50%)]"></div>
-    <header class="sticky top-0 z-20 border-b border-white/10 bg-black/55 backdrop-blur-md">
-      <div class="section-shell py-5 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-        <a href="/" class="text-white font-semibold tracking-[0.14em] uppercase text-xs">
-          Adidas Samba Study
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(214,186,151,0.22),_transparent_54%)]"></div>
+    <header class="sticky top-0 z-20 border-b border-white/10 bg-black/58 backdrop-blur-xl">
+      <div class="section-shell flex flex-col gap-4 py-5 lg:flex-row lg:items-center lg:justify-between">
+        <a href="/" class="text-[11px] font-semibold uppercase tracking-[0.24em] text-white">
+          Adidas Samba · Economics Case
         </a>
         <nav aria-label="Primary">
           <ul class="flex flex-wrap gap-2">
@@ -44,7 +45,7 @@ const navLinks = [
                   href={item.href}
                   class:list={[
                     "nav-pill",
-                    currentPath === normalizePath(item.href) && "border-white/30 bg-white/[0.12] text-white"
+                    currentPath === normalizePath(item.href) && "border-[#d4bc9e]/50 bg-[#d4bc9e]/12 text-white"
                   ]}
                 >
                   {item.label}
@@ -58,8 +59,30 @@ const navLinks = [
     <main class="pb-24">
       <slot />
     </main>
-    <footer class="section-shell border-t border-white/10 py-10 text-sm text-zinc-500">
-      Adidas Samba project · Monopolistic competition case study
+    <footer class="border-t border-white/10 bg-black/35">
+      <div class="section-shell grid gap-8 py-12 md:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <p class="section-kicker mb-3">University project framing</p>
+          <h2 class="text-2xl font-semibold tracking-tight text-white">Adidas Samba in Monopolistic Competition</h2>
+          <p class="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-300">
+            Premium academic landing page developed with Astro and Tailwind CSS to connect microeconomic theory
+            with contemporary brand strategy, consumer behavior, and competitive positioning evidence.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <article class="glass-card p-4">
+            <p class="text-[11px] uppercase tracking-[0.2em] text-zinc-400">Course relevance</p>
+            <p class="mt-2 text-sm text-zinc-200">Product differentiation · Elasticity · Pricing power · Brand loyalty</p>
+          </article>
+          <article class="glass-card p-4">
+            <p class="text-[11px] uppercase tracking-[0.2em] text-zinc-400">Evaluation focus</p>
+            <p class="mt-2 text-sm text-zinc-200">Visual analytics, strategic reasoning, and professional presentation quality</p>
+          </article>
+        </div>
+      </div>
+      <div class="section-shell border-t border-white/10 py-4 text-xs tracking-[0.16em] text-zinc-500">
+        © {year} Adidas Samba Economic Analysis · Academic use
+      </div>
     </footer>
   </body>
 </html>

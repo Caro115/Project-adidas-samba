@@ -1,41 +1,166 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import AdBannerInstagram from "../components/AdBannerInstagram.astro";
-import AdBannerTikTok from "../components/AdBannerTikTok.astro";
-import VideoShowcase from "../components/VideoShowcase.astro";
+
+const influencerStages = [
+  {
+    stage: "Creator seeding",
+    detail: "Products seeded to campus stylists and micro-creators for organic outfit content."
+  },
+  {
+    stage: "Narrative amplification",
+    detail: "Reels and short videos connect Samba heritage with identity and personal style."
+  },
+  {
+    stage: "Conversion layer",
+    detail: "Limited drops, creator codes, and urgency messaging convert attention into sales."
+  }
+];
+
+const socialProofBlocks = [
+  {
+    title: "Search momentum",
+    value: "+38%",
+    detail: "Estimated uplift during creator-led campaign cycles."
+  },
+  {
+    title: "UGC interactions",
+    value: "2.4M",
+    detail: "Simulated hashtag activity across social short-form platforms."
+  },
+  {
+    title: "Aided brand recall",
+    value: "81%",
+    detail: "Modeled post-campaign recognition in student audience surveys."
+  },
+  {
+    title: "Purchase intention",
+    value: "+22%",
+    detail: "Projected lift after social proof and celebrity endorsement."
+  }
+];
+
+const celebrityCollabExamples = [
+  {
+    title: "Music artist capsule",
+    detail: "A limited colorway with a global artist raises scarcity and social conversation."
+  },
+  {
+    title: "Football heritage documentary",
+    detail: "Short campaign film links terrace legacy to contemporary streetwear culture."
+  },
+  {
+    title: "Fashion-week styling collaboration",
+    detail: "Editorial collaborations elevate premium perception and willingness to pay."
+  }
+];
 ---
 
 <BaseLayout
-  title="Adidas Samba | Campaigns and Video"
-  description="Dedicated campaign page with social ad banners and embedded videos."
+  title="Adidas Samba | Campaigns and Video Strategy"
+  description="Dedicated campaign analysis page with embedded video, influencer strategy, and social proof simulations."
 >
   <section class="page-intro">
     <p class="section-kicker mb-3">Section 03</p>
-    <h1 class="section-title mb-4">Campaigns and Video Elements</h1>
+    <h1 class="section-title mb-4">Campaigns and Video Strategy</h1>
     <p class="muted-copy max-w-3xl">
-      This page groups communication assets in one place: social ad concepts,
-      banner-style callouts, and video material for storytelling.
+      This page shows how influencer ecosystems and visual storytelling shape demand behavior,
+      strengthen symbolic value, and reinforce Adidas Samba pricing power.
     </p>
   </section>
 
-  <section class="section-shell py-10">
-    <div class="grid md:grid-cols-2 gap-6">
-      <AdBannerInstagram />
-      <AdBannerTikTok />
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="grid gap-6 lg:grid-cols-[1.08fr_0.92fr]">
+      <article class="glass-card p-4 sm:p-5 md:p-6">
+        <p class="mb-3 text-xs uppercase tracking-[0.18em] text-zinc-400">Embedded marketing campaign video</p>
+        <video
+          controls
+          preload="metadata"
+          poster="/images/Banner_Samba.jpg"
+          class="w-full rounded-2xl border border-white/10 bg-black"
+        >
+          <source src="/images/Samba_video.mp4" type="video/mp4" />
+        </video>
+        <p class="mt-3 text-sm leading-relaxed text-zinc-300">
+          Hero visual sequence for premium storytelling: heritage references, clean styling, and urban lifestyle framing.
+        </p>
+      </article>
+
+      <article class="glass-card p-4 sm:p-6">
+        <p class="mb-3 text-xs uppercase tracking-[0.18em] text-zinc-400">Influencer strategy explanation</p>
+        <div class="space-y-4">
+          {influencerStages.map((item, index) => (
+            <div class="rounded-2xl border border-white/10 bg-white/[0.03] p-3 sm:p-4 transition duration-300 hover:border-[#d4bc9e]/40 hover:bg-[#d4bc9e]/8">
+              <p class="text-[11px] uppercase tracking-[0.18em] text-[#d9c2a4]">Phase {index + 1}</p>
+              <h3 class="mt-1 text-base sm:text-lg font-semibold text-white">{item.stage}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-zinc-300">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </article>
     </div>
   </section>
 
-  <VideoShowcase />
+  <section class="section-shell pb-18">
+    <div class="mb-6">
+      <p class="section-kicker mb-3">Social proof blocks</p>
+      <h2 class="section-title mb-4">Campaign metrics and demand effects</h2>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      {socialProofBlocks.map((item) => (
+        <article class="glass-card p-5 transition duration-300 hover:-translate-y-0.5 hover:border-[#d4bc9e]/40">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-zinc-400">{item.title}</p>
+          <p class="mt-2 text-3xl font-semibold text-white">{item.value}</p>
+          <p class="mt-2 text-sm leading-relaxed text-zinc-300">{item.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-shell pb-18">
+    <div class="mb-6">
+      <p class="section-kicker mb-3">Trend simulation</p>
+      <h2 class="section-title mb-4">TikTok and Instagram scenario modeling</h2>
+    </div>
+    <div class="grid gap-6 md:grid-cols-2">
+      <article class="relative overflow-hidden rounded-3xl border border-[#d4bc9e]/35 bg-gradient-to-br from-black via-zinc-900 to-[#2c2116] p-6">
+        <div class="absolute -left-10 -top-10 h-32 w-32 rounded-full bg-[#d4bc9e]/20 blur-3xl"></div>
+        <p class="text-xs uppercase tracking-[0.18em] text-[#e5d1b9]">TikTok trend simulation</p>
+        <h3 class="mt-3 text-2xl font-semibold text-white">#SambaRotation</h3>
+        <p class="mt-2 leading-relaxed text-zinc-200">
+          Outfit-transition content increases trend visibility and broadens adoption among price-aware consumers.
+        </p>
+        <div class="mt-5 flex items-center justify-between text-sm text-[#e5d1b9]">
+          <span>Simulated views: 8.7M</span>
+          <span>Engagement: 11.8%</span>
+        </div>
+      </article>
+
+      <article class="relative overflow-hidden rounded-3xl border border-[#d4bc9e]/35 bg-gradient-to-br from-[#1b1510] via-zinc-900 to-black p-6">
+        <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#8f6346]/35 blur-3xl"></div>
+        <p class="text-xs uppercase tracking-[0.18em] text-[#e5d1b9]">Instagram trend simulation</p>
+        <h3 class="mt-3 text-2xl font-semibold text-white">#SambaMinimal</h3>
+        <p class="mt-2 leading-relaxed text-zinc-200">
+          Editorial reels reinforce premium aesthetics, increasing symbolic value and aspirational positioning.
+        </p>
+        <div class="mt-5 flex items-center justify-between text-sm text-[#e5d1b9]">
+          <span>Simulated saves: 420K</span>
+          <span>Profile taps: +19%</span>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <section class="section-shell pb-20">
-    <div class="glass-card p-7 md:p-9">
-      <p class="section-kicker mb-3">Execution plan</p>
-      <h2 class="section-title mb-4">Suggested campaign sequence</h2>
-      <ol class="space-y-3 text-zinc-300 leading-relaxed">
-        <li><span class="text-white font-semibold">1.</span> Launch teaser clips to build pre-release curiosity.</li>
-        <li><span class="text-white font-semibold">2.</span> Publish Instagram editorial visuals for brand storytelling.</li>
-        <li><span class="text-white font-semibold">3.</span> Activate TikTok trend content for reach and participation.</li>
-      </ol>
+    <div class="glass-card p-6 md:p-7">
+      <p class="mb-3 text-xs uppercase tracking-[0.18em] text-zinc-400">Celebrity collaboration examples</p>
+      <div class="grid gap-4 md:grid-cols-3">
+        {celebrityCollabExamples.map((item) => (
+          <article class="rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition duration-300 hover:-translate-y-0.5 hover:border-[#d4bc9e]/40 hover:bg-[#d4bc9e]/8">
+            <h3 class="text-base font-semibold text-white">{item.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-zinc-300">{item.detail}</p>
+          </article>
+        ))}
+      </div>
     </div>
   </section>
 </BaseLayout>

@@ -1,46 +1,92 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ValueProposition from "../components/ValueProposition.astro";
+
+const valueDrivers = [
+  {
+    title: "Cultural legacy",
+    detail: "A long product history increases credibility and keeps the model relevant across generations."
+  },
+  {
+    title: "Design recognizability",
+    detail: "The low-profile silhouette and gum sole provide immediate brand identification."
+  },
+  {
+    title: "Social signaling",
+    detail: "Consumers use Samba to communicate taste, trend awareness, and belonging."
+  },
+  {
+    title: "Lifestyle versatility",
+    detail: "The model transitions across casual, smart-casual, and fashion-driven outfits."
+  }
+];
+
+const prestigeIndicators = [
+  { value: "High", label: "Perceived symbolic utility" },
+  { value: "Global", label: "Cross-market desirability" },
+  { value: "Low", label: "Substitution speed under loyal demand" }
+];
 ---
 
 <BaseLayout
   title="Adidas Samba | Value Proposition"
-  description="Dedicated page describing the Adidas Samba value proposition and consumer appeal."
+  description="Premium product differentiation and value proposition analysis for Adidas Samba."
 >
   <section class="page-intro">
     <p class="section-kicker mb-3">Section 01</p>
     <h1 class="section-title mb-4">Value Proposition</h1>
     <p class="muted-copy max-w-3xl">
-      This page focuses on the core value drivers behind Adidas Samba:
-      identity signaling, cultural relevance, and broad styling compatibility.
+      This page isolates the premium product proposition behind Adidas Samba and explains why
+      differentiation creates durable market preference in monopolistic competition.
     </p>
   </section>
 
-  <ValueProposition />
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="glass-card p-6 sm:p-8 md:p-10">
+      <div class="grid items-start gap-6 sm:gap-8 lg:grid-cols-[0.96fr_1.04fr]">
+        <img
+          src="/images/Banner_Samba.jpg"
+          alt="Adidas Samba premium campaign visual"
+          class="h-full w-full rounded-2xl sm:rounded-3xl border border-white/10 object-cover shadow-[0_30px_80px_-38px_rgba(0,0,0,0.9)]"
+        />
+        <div>
+          <p class="section-kicker mb-3">Premium product showcase</p>
+          <h2 class="section-title mb-4">Differentiation that consumers can feel and display</h2>
+          <p class="leading-relaxed text-zinc-300">
+            Samba competes with many substitutes, yet consumers repeatedly choose it because the value proposition
+            combines function with identity. Buyers are not only purchasing footwear utility; they are purchasing
+            heritage, aesthetic consistency, and social meaning.
+          </p>
+          <p class="mt-4 rounded-2xl border border-[#d4bc9e]/30 bg-[#d4bc9e]/10 px-4 py-3 text-sm text-[#e5d1b9]">
+            Emotional marketing hook: Adidas Samba is positioned as a timeless symbol rather than a seasonal product.
+          </p>
+          <div class="mt-5 grid gap-3 sm:grid-cols-3">
+            {prestigeIndicators.map((item) => (
+              <article class="rounded-2xl border border-white/12 bg-black/30 p-3">
+                <p class="text-lg font-semibold text-white">{item.value}</p>
+                <p class="text-xs uppercase tracking-[0.18em] text-zinc-400">{item.label}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section-shell pb-20">
-    <div class="grid md:grid-cols-3 gap-4">
-      <article class="glass-card p-6">
-        <p class="section-kicker mb-2">Driver 1</p>
-        <h3 class="panel-title">Cultural Legacy</h3>
-        <p class="text-zinc-400 text-sm leading-relaxed">
-          A long product history adds credibility and keeps the model recognizable across generations.
-        </p>
-      </article>
-      <article class="glass-card p-6">
-        <p class="section-kicker mb-2">Driver 2</p>
-        <h3 class="panel-title">Wardrobe Versatility</h3>
-        <p class="text-zinc-400 text-sm leading-relaxed">
-          A slim silhouette and neutral palette allow Samba to fit casual, smart-casual, and fashion-led outfits.
-        </p>
-      </article>
-      <article class="glass-card p-6">
-        <p class="section-kicker mb-2">Driver 3</p>
-        <h3 class="panel-title">Social Signaling</h3>
-        <p class="text-zinc-400 text-sm leading-relaxed">
-          Buyers perceive symbolic value through trend alignment and association with creators and influencers.
-        </p>
-      </article>
+    <div class="mb-6">
+      <p class="section-kicker mb-3">Product prestige indicators</p>
+      <h2 class="section-title mb-4">Core value drivers of Adidas Samba demand</h2>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2">
+      {valueDrivers.map((driver) => (
+        <article class="glass-card p-6 transition duration-300 hover:-translate-y-0.5 hover:border-[#d4bc9e]/40">
+          <h3 class="panel-title">{driver.title}</h3>
+          <p class="text-sm leading-relaxed text-zinc-300">{driver.detail}</p>
+        </article>
+      ))}
+    </div>
+    <div class="mt-7">
+      <a href="/market-pricing" class="cta-secondary">Continue to pricing and competitor analysis</a>
     </div>
   </section>
 </BaseLayout>
