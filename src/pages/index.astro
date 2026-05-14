@@ -1,0 +1,28 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import ValueProposition from "../components/ValueProposition.astro";
+import PriceTag from "../components/PriceTag.astro";
+import AdBannerInstagram from "../components/AdBannerInstagram.astro";
+import AdBannerTikTok from "../components/AdBannerTikTok.astro";
+import EconomicJustification from "../components/EconomicJustification.astro";
+---
+
+<BaseLayout>
+  <Hero />
+  <ValueProposition />
+  <PriceTag />
+
+  <section class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold mb-8 text-center">
+      Publicidad Simulada
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <AdBannerInstagram />
+      <AdBannerTikTok />
+    </div>
+  </section>
+
+  <EconomicJustification />
+</BaseLayout>

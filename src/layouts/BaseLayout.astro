@@ -1,0 +1,21 @@
+---
+const { title = "Adidas Samba - Monopolistic Competition"} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <meta 
+    name="description"
+    content="University project analyzing the Adidas Samba in the context of monopolistic competition. Explore market dynamics, consumer behavior, and competitive strategies in this comprehensive study." />  
+    <title>{title}</title>
+    </head>
+    
+    <body class="bg-white text-black font-sans antialiased">
+        <main>  
+            <slot />
+        </main>
+    </body>
+</html>
