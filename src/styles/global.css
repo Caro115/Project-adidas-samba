@@ -6,11 +6,11 @@
   }
 
   body {
-    @apply min-h-screen bg-[radial-gradient(circle_at_top,rgba(214,186,151,0.14),transparent_44%),linear-gradient(to_bottom,#050505,#090807_48%,#070605)] text-zinc-100 antialiased;
+    @apply min-h-screen bg-[#0e1424] text-[#ececec] antialiased;
   }
 
   ::selection {
-    @apply bg-[#d4b58f]/35 text-white;
+    @apply bg-[#374254]/25 text-[#ececec];
   }
 }
 
@@ -20,15 +20,15 @@
   }
 
   .section-title {
-    @apply text-2xl font-semibold tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl;
+    @apply text-2xl font-semibold tracking-tight text-[#ececec] sm:text-3xl md:text-4xl lg:text-5xl;
   }
 
   .section-kicker {
-    @apply text-xs font-medium uppercase tracking-[0.24em] text-[#d4bc9e];
+    @apply text-xs font-medium uppercase tracking-[0.24em] text-[#adbbc6];
   }
 
   .glass-card {
-    @apply rounded-2xl border border-white/12 bg-white/[0.04] backdrop-blur-lg shadow-[0_36px_100px_-45px_rgba(0,0,0,0.9)] sm:rounded-3xl;
+    @apply rounded-2xl border border-[#8a8fa3]/12 bg-[#374254] backdrop-blur-lg shadow-[0_36px_100px_-45px_rgba(0,0,0,0.9)] sm:rounded-3xl;
   }
 
   .page-intro {
@@ -36,26 +36,26 @@
   }
 
   .muted-copy {
-    @apply leading-relaxed text-zinc-300;
+    @apply leading-relaxed text-[#adbbc6];
   }
 
   .nav-pill {
-    @apply rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-xs text-zinc-300 transition duration-300 hover:-translate-y-0.5 hover:border-[#d4bc9e]/50 hover:bg-[#d4bc9e]/12 hover:text-white sm:px-4 sm:py-2 sm:text-sm;
+    @apply rounded-full border border-[#8a8fa3]/10 bg-[#0e1424]/6 px-3 py-1.5 text-xs text-[#adbbc6] transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/50 hover:bg-[#374254]/12 hover:text-[#adbbc6] sm:px-4 sm:py-2 sm:text-sm;
   }
 
   .panel-link {
-    @apply block rounded-2xl border border-white/12 bg-white/[0.04] p-4 shadow-[0_36px_100px_-45px_rgba(0,0,0,0.9)] backdrop-blur-lg transition duration-300 hover:-translate-y-1 hover:border-[#d4bc9e]/40 hover:bg-white/[0.055] sm:rounded-3xl sm:p-6;
+    @apply block rounded-2xl border border-[#8a8fa3]/12 bg-[#0e1424]/6 p-4 shadow-[0_36px_100px_-45px_rgba(0,0,0,0.9)] backdrop-blur-lg transition duration-300 hover:-translate-y-1 hover:border-[#8a8fa3]/40 hover:bg-[#374254]/10 sm:rounded-3xl sm:p-6;
   }
 
   .panel-title {
-    @apply mb-2 text-lg font-semibold text-white sm:text-xl;
+    @apply mb-2 text-lg font-semibold text-[#ececec] sm:text-xl;
   }
 
   .cta-primary {
-    @apply inline-flex items-center justify-center rounded-full border border-[#d4bc9e]/70 bg-[#d4bc9e] px-7 py-3 text-sm font-semibold text-black transition duration-300 hover:-translate-y-0.5 hover:bg-[#e0c8ab];
+    @apply inline-flex items-center justify-center rounded-full border border-[#8a8fa3]/70 bg-[#374254] px-7 py-3 text-sm font-semibold text-[#ececec] transition duration-300 hover:-translate-y-0.5 hover:bg-[#374254]/90;
   }
 
   .cta-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-white/18 bg-white/[0.04] px-7 py-3 text-sm font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:border-[#d4bc9e]/50 hover:bg-[#d4bc9e]/10;
+    @apply inline-flex items-center justify-center rounded-full border border-[#8a8fa3]/18 bg-[#0e1424]/6 px-7 py-3 text-sm font-semibold text-[#ececec] transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/50 hover:bg-[#374254]/10;
   }
 }

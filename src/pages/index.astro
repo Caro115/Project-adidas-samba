@@ -40,18 +40,18 @@ const sectionPages = [
     <div class="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
       <div class="space-y-6 sm:space-y-7">
         <p class="section-kicker">A+ University Economics Project</p>
-        <h1 class="text-4xl font-semibold leading-[0.92] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 class="text-4xl font-semibold leading-[0.92] tracking-tight text-[#ececec] sm:text-5xl md:text-6xl lg:text-7xl">
           Adidas Samba:
           <br />
           Premium Identity in
           <br />
           Monopolistic Competition
         </h1>
-        <p class="max-w-2xl text-base leading-relaxed text-zinc-300 sm:text-lg md:text-xl">
+        <p class="max-w-2xl text-base leading-relaxed text-[#adbbc6] sm:text-lg md:text-xl">
           This project explains how product differentiation, brand loyalty, and cultural positioning
           create pricing power despite many close substitutes.
         </p>
-        <p class="max-w-xl rounded-2xl border border-[#d4bc9e]/30 bg-[#d4bc9e]/10 px-4 py-3 text-sm text-[#e5d1b9]">
+        <p class="max-w-xl rounded-2xl border border-[#8a8fa3]/30 bg-[#374254]/10 px-4 py-3 text-sm text-[#adbbc6]">
           Core thesis: consumers purchase symbolic value, not only utility.
         </p>
         <div class="flex flex-col sm:flex-row gap-3">
@@ -60,9 +60,9 @@ const sectionPages = [
         </div>
         <div class="grid gap-3 sm:grid-cols-2">
           {prestigeSignals.map((signal) => (
-            <article class="glass-card p-4 transition duration-300 hover:-translate-y-0.5 hover:border-[#d4bc9e]/40">
-              <p class="text-xl font-semibold text-white">{signal.value}</p>
-              <p class="mt-1 text-sm text-zinc-400">{signal.label}</p>
+            <article class="glass-card p-4 transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/40">
+              <p class="text-xl font-semibold text-[#ececec]">{signal.value}</p>
+              <p class="mt-1 text-sm text-[#adbbc6]">{signal.label}</p>
             </article>
           ))}
         </div>
@@ -70,24 +70,24 @@ const sectionPages = [
 
       <div class="relative">
         <div class="absolute -inset-10 -z-10 rounded-[3rem] bg-[radial-gradient(circle_at_30%_20%,rgba(212,188,158,0.35),transparent_62%)] blur-2xl"></div>
-        <article class="glass-card p-4 sm:p-5">
+          <article class="glass-card p-4 sm:p-5">
           <img
             src="/images/Samba.jpg"
             alt="Adidas Samba premium product view"
-            class="h-full w-full rounded-[1.8rem] border border-white/12 object-cover shadow-[0_40px_120px_-45px_rgba(0,0,0,0.95)]"
+            class="h-full w-full rounded-[1.8rem] border border-[#8a8fa3]/12 object-cover shadow-[0_40px_120px_-45px_rgba(0,0,0,0.95)]"
           />
           <div class="mt-4 grid gap-3 sm:grid-cols-3">
-            <div class="rounded-2xl border border-white/12 bg-black/35 p-3">
-              <p class="text-[10px] uppercase tracking-[0.18em] text-zinc-400">Positioning</p>
-              <p class="mt-1 text-sm font-medium text-white">Premium lifestyle classic</p>
+            <div class="rounded-2xl border border-[#8a8fa3]/12 bg-[#374254]/30 p-3">
+              <p class="text-[10px] uppercase tracking-[0.18em] text-[#adbbc6]">Positioning</p>
+              <p class="mt-1 text-sm font-medium text-[#ececec]">Premium lifestyle classic</p>
             </div>
-            <div class="rounded-2xl border border-white/12 bg-black/35 p-3">
-              <p class="text-[10px] uppercase tracking-[0.18em] text-zinc-400">Market structure</p>
-              <p class="mt-1 text-sm font-medium text-white">Monopolistic competition</p>
+            <div class="rounded-2xl border border-[#8a8fa3]/12 bg-[#374254]/30 p-3">
+              <p class="text-[10px] uppercase tracking-[0.18em] text-[#adbbc6]">Market structure</p>
+              <p class="mt-1 text-sm font-medium text-[#ececec]">Monopolistic competition</p>
             </div>
-            <div class="rounded-2xl border border-[#8f6346]/55 bg-[#8f6346]/15 p-3">
-              <p class="text-[10px] uppercase tracking-[0.18em] text-[#d8ba9b]">Economic signal</p>
-              <p class="mt-1 text-sm font-medium text-white">Relative price resilience</p>
+            <div class="rounded-2xl border border-[#8a8fa3]/55 bg-[#374254]/15 p-3">
+              <p class="text-[10px] uppercase tracking-[0.18em] text-[#adbbc6]">Economic signal</p>
+              <p class="mt-1 text-sm font-medium text-[#ececec]">Relative price resilience</p>
             </div>
           </div>
         </article>
@@ -99,7 +99,7 @@ const sectionPages = [
     <div class="mb-7">
       <p class="section-kicker mb-3">Project architecture</p>
       <h2 class="section-title mb-4">Each section is now split by dedicated page</h2>
-      <p class="max-w-3xl leading-relaxed text-zinc-300">
+      <p class="max-w-3xl leading-relaxed text-[#adbbc6]">
         Use the cards below to navigate the full analysis. Each topic has its own route for cleaner
         professor evaluation, clearer visual hierarchy, and stronger academic organization.
       </p>
@@ -108,7 +108,7 @@ const sectionPages = [
       {sectionPages.map((page) => (
         <a href={page.href} class="panel-link">
           <h3 class="panel-title">{page.title}</h3>
-          <p class="text-sm leading-relaxed text-zinc-300">{page.detail}</p>
+          <p class="text-sm leading-relaxed text-[#adbbc6]">{page.detail}</p>
         </a>
       ))}
     </div>

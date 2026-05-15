@@ -30,9 +30,9 @@ const academicSummary = [
   description="Dedicated economic analysis page with demand elasticity, monopolistic competition visual explanation, and final academic conclusion."
 >
   <section class="page-intro">
-    <p class="section-kicker mb-3">Section 04</p>
-    <h1 class="section-title mb-4">Economic Analysis and Data Visualization</h1>
-    <p class="muted-copy max-w-3xl">
+    <p class="section-kicker mb-3 text-[#adbbc6]">Section 04</p>
+    <h1 class="section-title mb-4 text-[#ececec]">Economic Analysis and Data Visualization</h1>
+    <p class="muted-copy max-w-3xl text-[#adbbc6]">
       This page provides visual academic support for the project’s core microeconomic argument:
       product differentiation and symbolic value create measurable pricing power in monopolistic competition.
     </p>
@@ -40,14 +40,14 @@ const academicSummary = [
 
   <section class="section-shell pb-16 sm:pb-18">
     <div class="mb-6 sm:mb-8">
-      <p class="section-kicker mb-3">Data visualization focus</p>
-      <h2 class="section-title mb-4">Graph-based evidence for professor evaluation</h2>
+      <p class="section-kicker mb-3 text-[#adbbc6]">Data visualization focus</p>
+      <h2 class="section-title mb-4 text-[#ececec]">Graph-based evidence for professor evaluation</h2>
     </div>
 
     <div class="grid gap-6 sm:gap-8 xl:grid-cols-2">
       <article class="glass-card p-6 sm:p-8">
-        <p class="mb-3 sm:mb-4 text-xs uppercase tracking-[0.18em] text-zinc-400">Demand elasticity graph</p>
-        <svg viewBox="0 0 360 230" class="h-auto w-full rounded-2xl border border-white/10 bg-black/35 p-3 sm:p-4">
+        <p class="mb-3 sm:mb-4 text-xs uppercase tracking-[0.18em] text-[#adbbc6]">Demand elasticity graph</p>
+        <svg viewBox="0 0 360 230" class="h-auto w-full rounded-2xl border border-[#8a8fa3]/10 bg-[#374254]/30 p-3 sm:p-4">
           <line x1="42" y1="20" x2="42" y2="190" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"></line>
           <line x1="42" y1="190" x2="332" y2="190" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"></line>
           <line x1="42" y1="58" x2="332" y2="58" stroke="rgba(255,255,255,0.09)" stroke-width="1"></line>
@@ -60,14 +60,14 @@ const academicSummary = [
           <text x="86" y="49" fill="#d4bc9e" font-size="11">Samba demand (Eᵈ ≈ -0.7)</text>
           <text x="110" y="130" fill="#b8c1cc" font-size="11">Generic demand (Eᵈ ≈ -1.5)</text>
         </svg>
-        <p class="mt-4 sm:mt-6 text-sm leading-relaxed text-zinc-300">
+        <p class="mt-4 sm:mt-6 text-sm leading-relaxed text-[#adbbc6]">
           Samba demand is less elastic than generic sneakers because symbolic value delays substitution behavior.
         </p>
       </article>
 
       <article class="glass-card p-6 sm:p-8">
-        <p class="mb-3 sm:mb-4 text-xs uppercase tracking-[0.18em] text-zinc-400">Monopolistic competition explanation graph</p>
-        <svg viewBox="0 0 360 230" class="h-auto w-full rounded-2xl border border-white/10 bg-black/35 p-3 sm:p-4">
+        <p class="mb-3 sm:mb-4 text-xs uppercase tracking-[0.18em] text-[#adbbc6]">Monopolistic competition explanation graph</p>
+        <svg viewBox="0 0 360 230" class="h-auto w-full rounded-2xl border border-[#8a8fa3]/10 bg-[#374254]/30 p-3 sm:p-4">
           <line x1="44" y1="22" x2="44" y2="190" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"></line>
           <line x1="44" y1="190" x2="334" y2="190" stroke="rgba(255,255,255,0.55)" stroke-width="1.2"></line>
           <line x1="44" y1="64" x2="334" y2="64" stroke="rgba(255,255,255,0.09)" stroke-width="1"></line>
@@ -88,21 +88,21 @@ const academicSummary = [
           <text x="8" y="26" fill="#d4d4d8" font-size="11">Pricing power</text>
           <text x="224" y="210" fill="#d4d4d8" font-size="11">Perceived differentiation</text>
         </svg>
-        <p class="mt-4 sm:mt-6 text-sm leading-relaxed text-zinc-300">
+        <p class="mt-4 sm:mt-6 text-sm leading-relaxed text-[#adbbc6]">
           Many firms coexist, but each competes through differentiated positioning instead of identical products.
         </p>
       </article>
 
       <article class="glass-card p-6 sm:p-8 xl:col-span-2">
-        <p class="mb-3 sm:mb-4 text-xs uppercase tracking-[0.18em] text-zinc-400">Competitor comparison chart</p>
-        <div class="space-y-4 sm:space-y-6 rounded-2xl border border-white/10 bg-black/30 p-4 sm:p-6">
+        <p class="mb-3 sm:mb-4 text-xs uppercase tracking-[0.18em] text-[#adbbc6]">Competitor comparison chart</p>
+        <div class="space-y-4 sm:space-y-6 rounded-2xl border border-[#8a8fa3]/10 bg-[#374254]/30 p-4 sm:p-6">
           {competitorChartData.map((item) => (
             <div>
-              <div class="mb-2 flex items-center justify-between text-sm text-zinc-300">
+              <div class="mb-2 flex items-center justify-between text-sm text-[#adbbc6]">
                 <span>{item.brand}</span>
                 <span>{item.brandValue}</span>
               </div>
-              <div class="h-3 sm:h-4 rounded-full bg-white/10">
+              <div class="h-3 sm:h-4 rounded-full bg-[#8a8fa3]/10">
                 <div
                   class="h-full rounded-full bg-gradient-to-r from-[#d8bfa0] to-[#8f6346]"
                   style={`width: ${item.brandScore}%`}
@@ -111,7 +111,7 @@ const academicSummary = [
             </div>
           ))}
         </div>
-        <p class="mt-4 sm:mt-6 text-sm leading-relaxed text-zinc-300">
+        <p class="mt-4 sm:mt-6 text-sm leading-relaxed text-[#adbbc6]">
           Higher symbolic brand value supports stronger non-price competition and improved margin protection.
         </p>
       </article>

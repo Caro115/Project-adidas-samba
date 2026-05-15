@@ -32,9 +32,9 @@ const prestigeIndicators = [
   description="Premium product differentiation and value proposition analysis for Adidas Samba."
 >
   <section class="page-intro">
-    <p class="section-kicker mb-3">Section 01</p>
-    <h1 class="section-title mb-4">Value Proposition</h1>
-    <p class="muted-copy max-w-3xl">
+    <p class="section-kicker mb-3 text-[#adbbc6]">Section 01</p>
+    <h1 class="section-title mb-4 text-[#ececec]">Value Proposition</h1>
+    <p class="muted-copy max-w-3xl text-[#adbbc6]">
       This page isolates the premium product proposition behind Adidas Samba and explains why
       differentiation creates durable market preference in monopolistic competition.
     </p>
@@ -46,24 +46,24 @@ const prestigeIndicators = [
         <img
           src="/images/Banner_Samba.jpg"
           alt="Adidas Samba premium campaign visual"
-          class="h-full w-full rounded-2xl sm:rounded-3xl border border-white/10 object-cover shadow-[0_30px_80px_-38px_rgba(0,0,0,0.9)]"
+          class="h-full w-full rounded-2xl sm:rounded-3xl border border-[#8a8fa3]/10 object-cover shadow-[0_30px_80px_-38px_rgba(0,0,0,0.9)]"
         />
         <div>
-          <p class="section-kicker mb-3">Premium product showcase</p>
-          <h2 class="section-title mb-4">Differentiation that consumers can feel and display</h2>
-          <p class="leading-relaxed text-zinc-300">
+          <p class="section-kicker mb-3 text-[#adbbc6]">Premium product showcase</p>
+          <h2 class="section-title mb-4 text-[#ececec]">Differentiation that consumers can feel and display</h2>
+          <p class="leading-relaxed text-[#adbbc6]">
             Samba competes with many substitutes, yet consumers repeatedly choose it because the value proposition
             combines function with identity. Buyers are not only purchasing footwear utility; they are purchasing
             heritage, aesthetic consistency, and social meaning.
           </p>
-          <p class="mt-4 rounded-2xl border border-[#d4bc9e]/30 bg-[#d4bc9e]/10 px-4 py-3 text-sm text-[#e5d1b9]">
+          <p class="mt-4 rounded-2xl border border-[#8a8fa3]/30 bg-[#374254]/10 px-4 py-3 text-sm text-[#adbbc6]">
             Emotional marketing hook: Adidas Samba is positioned as a timeless symbol rather than a seasonal product.
           </p>
           <div class="mt-5 grid gap-3 sm:grid-cols-3">
             {prestigeIndicators.map((item) => (
-              <article class="rounded-2xl border border-white/12 bg-black/30 p-3">
-                <p class="text-lg font-semibold text-white">{item.value}</p>
-                <p class="text-xs uppercase tracking-[0.18em] text-zinc-400">{item.label}</p>
+              <article class="rounded-2xl border border-[#8a8fa3]/15 bg-[#0e1424]/65 p-3">
+                <p class="text-lg font-semibold text-[#ececec]">{item.value}</p>
+                <p class="text-xs uppercase tracking-[0.18em] text-[#adbbc6]">{item.label}</p>
               </article>
             ))}
           </div>
@@ -74,19 +74,19 @@ const prestigeIndicators = [
 
   <section class="section-shell pb-20">
     <div class="mb-6">
-      <p class="section-kicker mb-3">Product prestige indicators</p>
-      <h2 class="section-title mb-4">Core value drivers of Adidas Samba demand</h2>
+      <p class="section-kicker mb-3 text-[#adbbc6]">Product prestige indicators</p>
+      <h2 class="section-title mb-4 text-[#ececec]">Core value drivers of Adidas Samba demand</h2>
     </div>
     <div class="grid gap-4 md:grid-cols-2">
       {valueDrivers.map((driver) => (
-        <article class="glass-card p-6 transition duration-300 hover:-translate-y-0.5 hover:border-[#d4bc9e]/40">
-          <h3 class="panel-title">{driver.title}</h3>
-          <p class="text-sm leading-relaxed text-zinc-300">{driver.detail}</p>
+        <article class="glass-card p-6 border border-[#8a8fa3]/20 bg-[#374254] transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/40">
+          <h3 class="panel-title text-[#ececec]">{driver.title}</h3>
+          <p class="text-sm leading-relaxed text-[#adbbc6]">{driver.detail}</p>
         </article>
       ))}
     </div>
     <div class="mt-7">
-      <a href="/market-pricing" class="cta-secondary">Continue to pricing and competitor analysis</a>
+      <a href="/market-pricing" class="cta-secondary border border-[#8a8fa3] bg-[#374254] text-[#ececec] hover:text-[#adbbc6]">Continue to pricing and competitor analysis</a>
     </div>
   </section>
 </BaseLayout>

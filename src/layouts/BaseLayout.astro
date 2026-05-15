@@ -30,11 +30,11 @@ const year = new Date().getFullYear();
     />
     <title>{title}</title>
   </head>
-  <body>
-    <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(214,186,151,0.22),_transparent_54%)]"></div>
-    <header class="sticky top-0 z-20 border-b border-white/10 bg-black/58 backdrop-blur-xl">
+  <body class="bg-[#0e1424] text-[#ececec]">
+    <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(236,236,236,0.08),_transparent_54%)]"></div>
+    <header class="sticky top-0 z-20 border-b border-[#8a8fa3]/20 bg-[#0e1424]/95 backdrop-blur-xl">
       <div class="section-shell flex flex-col gap-4 py-5 lg:flex-row lg:items-center lg:justify-between">
-        <a href="/" class="text-[11px] font-semibold uppercase tracking-[0.24em] text-white">
+        <a href="/" class="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ececec]">
           Adidas Samba · Economics Case
         </a>
         <nav aria-label="Primary">
@@ -45,7 +45,8 @@ const year = new Date().getFullYear();
                   href={item.href}
                   class:list={[
                     "nav-pill",
-                    currentPath === normalizePath(item.href) && "border-[#d4bc9e]/50 bg-[#d4bc9e]/12 text-white"
+                    "text-[#adbbc6] hover:text-[#adbbc6]",
+                     currentPath === normalizePath(item.href) && "border-[#8a8fa3]/50 bg-[#374254]/12 text-[#ececec]"
                   ]}
                 >
                   {item.label}
@@ -59,28 +60,28 @@ const year = new Date().getFullYear();
     <main class="pb-24">
       <slot />
     </main>
-    <footer class="border-t border-white/10 bg-black/35">
+    <footer class="border-t border-[#8a8fa3]/20 bg-[#374254]">
       <div class="section-shell grid gap-8 py-12 md:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p class="section-kicker mb-3">University project framing</p>
-          <h2 class="text-2xl font-semibold tracking-tight text-white">Adidas Samba in Monopolistic Competition</h2>
-          <p class="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-300">
+          <h2 class="text-2xl font-semibold tracking-tight text-[#ececec]">Adidas Samba in Monopolistic Competition</h2>
+          <p class="mt-3 max-w-2xl text-sm leading-relaxed text-[#adbbc6]">
             Premium academic landing page developed with Astro and Tailwind CSS to connect microeconomic theory
             with contemporary brand strategy, consumer behavior, and competitive positioning evidence.
           </p>
         </div>
         <div class="grid gap-4 sm:grid-cols-2">
           <article class="glass-card p-4">
-            <p class="text-[11px] uppercase tracking-[0.2em] text-zinc-400">Course relevance</p>
-            <p class="mt-2 text-sm text-zinc-200">Product differentiation · Elasticity · Pricing power · Brand loyalty</p>
+            <p class="text-[11px] uppercase tracking-[0.2em] text-[#adbbc6]">Course relevance</p>
+            <p class="mt-2 text-sm text-[#ececec]">Product differentiation · Elasticity · Pricing power · Brand loyalty</p>
           </article>
           <article class="glass-card p-4">
-            <p class="text-[11px] uppercase tracking-[0.2em] text-zinc-400">Evaluation focus</p>
-            <p class="mt-2 text-sm text-zinc-200">Visual analytics, strategic reasoning, and professional presentation quality</p>
+            <p class="text-[11px] uppercase tracking-[0.2em] text-[#adbbc6]">Evaluation focus</p>
+            <p class="mt-2 text-sm text-[#ececec]">Visual analytics, strategic reasoning, and professional presentation quality</p>
           </article>
         </div>
       </div>
-      <div class="section-shell border-t border-white/10 py-4 text-xs tracking-[0.16em] text-zinc-500">
+      <div class="section-shell border-t border-[#8a8fa3]/20 py-4 text-xs tracking-[0.16em] text-[#adbbc6]">
         © {year} Adidas Samba Economic Analysis · Academic use
       </div>
     </footer>
