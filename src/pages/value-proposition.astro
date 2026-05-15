@@ -42,32 +42,41 @@ const prestigeIndicators = [
 
   <section class="section-shell pb-16 sm:pb-18">
     <div class="glass-card p-6 sm:p-8 md:p-10">
-      <div class="grid items-start gap-6 sm:gap-8 lg:grid-cols-[0.96fr_1.04fr]">
-        <img
-          src="/images/Banner_Samba.jpg"
-          alt="Adidas Samba premium campaign visual"
-          class="h-full w-full rounded-2xl sm:rounded-3xl border border-[#8a8fa3]/10 object-cover shadow-[0_30px_80px_-38px_rgba(0,0,0,0.9)]"
-        />
-        <div>
+      {/* Cambiado lg:items-start por lg:items-stretch para que ambas columnas midan lo mismo */}
+      <div class="grid gap-8 md:gap-10 lg:grid-cols-2 lg:items-stretch">
+        
+        {/* Imagen - Orden 2 en mobile (abajo), orden 1 en lg (izquierda) */}
+        {/* Agregada la clase h-full al contenedor y a la imagen */}
+        <div class="order-2 lg:order-1 h-full">
+          <img
+            src="/images/Samba2.jpg"
+            alt="Adidas Samba premium campaign visual"
+            class="w-full h-full rounded-2xl sm:rounded-3xl border border-[#8a8fa3]/10 object-cover shadow-[0_30px_80px_-38px_rgba(0,0,0,0.9)]"
+          />
+        </div>
+
+        {/* Bloque de texto - Orden 1 en mobile (arriba), orden 2 en lg (derecha) */}
+        <div class="order-1 lg:order-2">
           <p class="section-kicker mb-3 text-[#adbbc6]">Premium product showcase</p>
-          <h2 class="section-title mb-4 text-[#ececec]">Differentiation that consumers can feel and display</h2>
-          <p class="leading-relaxed text-[#adbbc6]">
+          <h2 class="section-title mb-6 text-[#ececec]">Differentiation that consumers can feel and display</h2>
+          <p class="mb-4 leading-relaxed text-[#adbbc6]">
             Samba competes with many substitutes, yet consumers repeatedly choose it because the value proposition
             combines function with identity. Buyers are not only purchasing footwear utility; they are purchasing
             heritage, aesthetic consistency, and social meaning.
           </p>
-          <p class="mt-4 rounded-2xl border border-[#8a8fa3]/30 bg-[#374254]/10 px-4 py-3 text-sm text-[#adbbc6]">
+          <p class="mb-6 rounded-2xl border border-[#8a8fa3]/30 bg-[#374254]/10 px-4 py-3 text-sm text-[#adbbc6]">
             Emotional marketing hook: Adidas Samba is positioned as a timeless symbol rather than a seasonal product.
           </p>
-          <div class="mt-5 grid gap-3 sm:grid-cols-3">
+          <div class="grid gap-3 sm:grid-cols-3">
             {prestigeIndicators.map((item) => (
-              <article class="rounded-2xl border border-[#8a8fa3]/15 bg-[#0e1424]/65 p-3">
+              <article class="rounded-2xl border border-[#8a8fa3]/15 bg-[#0e1424]/65 p-4 sm:p-5">
                 <p class="text-lg font-semibold text-[#ececec]">{item.value}</p>
-                <p class="text-xs uppercase tracking-[0.18em] text-[#adbbc6]">{item.label}</p>
+                <p class="mt-2 text-xs uppercase tracking-[0.18em] text-[#adbbc6]">{item.label}</p>
               </article>
             ))}
           </div>
         </div>
+
       </div>
     </div>
   </section>
