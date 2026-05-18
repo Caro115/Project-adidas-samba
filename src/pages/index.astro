@@ -11,7 +11,7 @@ const prestigeSignals = [
 const sectionPages = [
   {
     href: "/value-proposition",
-    title: "1. Product or Service",
+    title: "1. Product ",
     detail: "Product description, target market, and value proposition for Adidas Samba."
   },
   {
@@ -30,6 +30,12 @@ const sectionPages = [
     detail: "Pricing strategy, promotion choices, positioning, influencer strategy, and campaign metrics."
   }
 ];
+
+const productShowcase = {
+  href: "/products",
+  title: "Interactive Product Grid",
+  detail: "A modern Adidas Samba product page with hover transitions from shoebox visuals to real sneaker photos."
+};
 
 const heroPreviewImages = [
   {
@@ -148,5 +154,9 @@ const heroPreviewImages = [
         </a>
       ))}
     </div>
+    <a href={productShowcase.href} class="panel-link mt-4 border-[#d8bfa0]/35 bg-[#d8bfa0]/10">
+      <h3 class="panel-title">{productShowcase.title}</h3>
+      <p class="text-sm leading-relaxed text-[#adbbc6]">{productShowcase.detail}</p>
+    </a>
   </section>
 </BaseLayout>

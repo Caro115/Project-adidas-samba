@@ -1,0 +1,588 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const blueBoxImage = "/images/ADIDAS _ ORIGINALS® BOX 1366 x 768 PC Wallpaper.jpg.jpeg";
+
+// Each card shares the Adidas box cover and reveals a different Samba model on hover.
+const products = [
+  {
+    name: "SAMBA OG",
+    price: "$40",
+    slug: "samba-og",
+    color: "Cloud White / Core Black",
+    description: "Classic low-profile Samba with a leather upper, T-toe overlay, and gum rubber outsole.",
+    shoeImage: "/images/Tenis samba og/Tenis_Samba_OG.jpg"
+  },
+  {
+    name: "SAMBA BLUE",
+    price: "$45",
+    slug: "samba-blue",
+    color: "Royal Blue / White",
+    description: "A bold blue variation that keeps the slim Samba silhouette while adding a stronger streetwear signal.",
+    shoeImage: "/images/Tenis azules samba/Tenis_Samba_OG_Azul.avif"
+  },
+  {
+    name: "SAMBA WHITE",
+    price: "$48",
+    slug: "samba-white",
+    color: "Off White / Cream",
+    description: "A clean everyday pair designed for versatile styling with denim, trousers, and casual outfits.",
+    shoeImage: "/images/Tenis samba blanco/Tenis_Sambae_Blanco.jpg"
+  },
+  {
+    name: "SAMBA GREEN",
+    price: "$50",
+    slug: "samba-green",
+    color: "Collegiate Green / White",
+    description: "A heritage-inspired colorway that gives the Samba a sportier visual identity.",
+    shoeImage: "/images/Tenis samba verde/TENIS_SAMBA_OG_Verde.jpg"
+  },
+  {
+    name: "SAMBA XLG",
+    price: "$55",
+    slug: "samba-xlg",
+    color: "White / Black / Gum",
+    description: "A slightly bolder Samba expression with more visual weight while keeping the recognizable profile.",
+    shoeImage: "/images/Samba/Tenis_Samba_XLG_Blanco.avif"
+  },
+  {
+    name: "SAMBA PINK",
+    price: "$60",
+    slug: "samba-pink",
+    color: "Pink / White / Gum",
+    description: "A soft pink Samba option made for fashion-led outfits and social-media-ready styling.",
+    shoeImage: "/images/Samba Pink/SAMBA_OG_J_Rosa2.avif"
+  }
+];
+
+const sizes = ["5", "6", "7", "8", "9", "10", "11"];
+---
+
+<BaseLayout
+  title="Adidas SAMBA | Product Grid"
+  description="Responsive Adidas Samba product grid with hover transitions from blue Adidas boxes to real shoe photos."
+>
+  <section class="product-hero">
+    <div class="section-shell relative z-10 py-8 sm:py-10">
+      <div class="flex justify-end gap-2">
+        <a href="#products" class="info-link" aria-label="Info link to product grid">Info</a>
+      </div>
+
+      <div class="mx-auto flex min-h-[38vh] max-w-6xl flex-col items-center justify-center py-16 text-center sm:min-h-[44vh] sm:py-20">
+        <p class="section-kicker mb-5">Product showcase</p>
+        <h1 class="max-w-5xl text-[clamp(3rem,12vw,8.25rem)] font-black uppercase leading-[0.86] tracking-normal text-[#ececec] drop-shadow-[0_24px_55px_rgba(0,0,0,0.45)]">
+          Adidas SAMBA
+        </h1>
+        <p class="mt-6 max-w-2xl text-base leading-relaxed text-[#d6dde6] sm:text-lg">
+          A premium retail showcase for Samba models, built around the same visual identity as the economic analysis.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products" class="section-shell py-12 sm:py-16 lg:py-20">
+    <div class="mb-7">
+      <p class="section-kicker mb-3">Interactive retail grid</p>
+      <h2 class="section-title mb-4">From box to shoe</h2>
+      <p class="max-w-3xl leading-relaxed text-[#adbbc6]">
+        Explore the product set through a darker storefront system that matches the rest of the project.
+      </p>
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {products.map((product) => (
+        <button
+          type="button"
+          class="product-card text-left"
+          aria-label={`Open purchase panel for ${product.name}`}
+          data-product-card
+          data-name={product.name}
+          data-price={product.price}
+          data-slug={product.slug}
+          data-color={product.color}
+          data-description={product.description}
+          data-shoe-image={product.shoeImage}
+        >
+          <div class="product-media">
+            <img
+              src={blueBoxImage}
+              alt="Blue Adidas shoebox"
+              class="product-image product-box"
+              loading="lazy"
+              decoding="async"
+            />
+            <img
+              src={product.shoeImage}
+              alt={`${product.name} sneaker`}
+              class="product-image product-shoe"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="flex items-center justify-between gap-4 px-1 pt-4">
+            <h3 class="text-base font-black uppercase tracking-normal text-[#ececec] sm:text-lg">{product.name}</h3>
+            <p class="shrink-0 text-base font-semibold text-[#d8bfa0] sm:text-lg">{product.price}</p>
+          </div>
+          <div class="mt-3 flex items-center justify-between gap-3 border-t border-[#8a8fa3]/12 px-1 pt-3">
+            <p class="min-w-0 text-xs uppercase tracking-[0.16em] text-[#adbbc6]">{product.color}</p>
+            <span class="product-action">Buy</span>
+          </div>
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <div id="product-modal" class="product-modal hidden" aria-hidden="true">
+    <button class="product-modal-backdrop" type="button" data-close-product-modal aria-label="Close product panel"></button>
+    <section class="product-modal-panel" role="dialog" aria-modal="true" aria-labelledby="product-modal-title">
+      <button class="product-modal-close" type="button" data-close-product-modal aria-label="Close product panel">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 18 18 6M6 6l12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+      </button>
+
+      <div class="product-modal-grid">
+        <div class="product-modal-image-wrap">
+          <img id="product-modal-image" src={products[0].shoeImage} alt="" class="product-modal-image" />
+        </div>
+
+        <div class="product-modal-content">
+          <p class="section-kicker mb-3">Selected model</p>
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 id="product-modal-title" class="text-3xl font-black uppercase leading-none tracking-normal text-[#ececec] sm:text-4xl">
+                {products[0].name}
+              </h2>
+              <p id="product-modal-color" class="mt-3 text-sm font-medium text-[#d8bfa0]">{products[0].color}</p>
+            </div>
+            <p id="product-modal-price" class="rounded-full border border-[#d8bfa0]/35 bg-[#d8bfa0]/10 px-4 py-2 text-lg font-bold text-[#d8bfa0]">
+              {products[0].price}
+            </p>
+          </div>
+
+          <p id="product-modal-description" class="mt-5 leading-relaxed text-[#adbbc6]">
+            {products[0].description}
+          </p>
+
+          <div class="mt-6">
+            <p class="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#adbbc6]">Size</p>
+            <div id="product-size-options" class="grid grid-cols-4 gap-2 sm:grid-cols-7">
+              {sizes.map((size, index) => (
+                <button
+                  type="button"
+                  class:list={["size-option", index === 0 && "is-selected"]}
+                  data-size={size}
+                  aria-pressed={index === 0 ? "true" : "false"}
+                >
+                  {size}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div class="mt-7 grid gap-3 sm:grid-cols-2">
+            <button id="add-to-bag-button" type="button" class="purchase-secondary">Add to bag</button>
+            <button id="buy-now-button" type="button" class="purchase-primary">Buy now</button>
+          </div>
+
+          <div id="purchase-summary" class="purchase-summary" aria-live="polite">
+            Ready to purchase <span id="summary-model">{products[0].name}</span> in size <span id="summary-size">{sizes[0]}</span>.
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <style>
+    .product-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(14, 20, 36, 0.96), rgba(55, 66, 84, 0.84) 48%, rgba(26, 47, 61, 0.94)),
+        url("/images/Photos for the website/ADIDAS POSTER.jpg") center / cover;
+    }
+
+    .product-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 30%, rgba(216, 191, 160, 0.22), transparent 38%),
+        linear-gradient(180deg, rgba(236, 236, 236, 0.08), rgba(14, 20, 36, 0.72));
+      pointer-events: none;
+    }
+
+    .info-link {
+      border: 1px solid rgba(138, 143, 163, 0.35);
+      border-radius: 999px;
+      background: rgba(14, 20, 36, 0.5);
+      color: #ececec;
+      display: inline-flex;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1;
+      padding: 0.75rem 1rem;
+      text-decoration: none;
+      transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+    }
+
+    .info-link:hover,
+    .info-link:focus-visible {
+      background: rgba(55, 66, 84, 0.78);
+      border-color: rgba(216, 191, 160, 0.55);
+      transform: translateY(-1px);
+    }
+
+    .product-card {
+      border: 1px solid rgba(138, 143, 163, 0.14);
+      border-radius: 8px;
+      background: linear-gradient(180deg, rgba(55, 66, 84, 0.95), rgba(14, 20, 36, 0.92));
+      box-shadow: 0 34px 95px -54px rgba(0, 0, 0, 0.95);
+      color: inherit;
+      display: block;
+      overflow: hidden;
+      padding: 0.75rem;
+      text-decoration: none;
+      transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+      width: 100%;
+    }
+
+    .product-card:hover,
+    .product-card:focus-visible {
+      border-color: rgba(216, 191, 160, 0.5);
+      box-shadow: 0 38px 115px -55px rgba(216, 191, 160, 0.34);
+      outline: none;
+      transform: translateY(-4px);
+    }
+
+    .product-media {
+      aspect-ratio: 4 / 3;
+      background: #0e1424;
+      border: 1px solid rgba(138, 143, 163, 0.18);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-image {
+      height: 100%;
+      inset: 0;
+      object-fit: cover;
+      position: absolute;
+      transition: opacity 520ms ease, transform 520ms ease;
+      width: 100%;
+    }
+
+    .product-box {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .product-shoe {
+      opacity: 0;
+      transform: scale(1.04);
+    }
+
+    .product-card:hover .product-box,
+    .product-card:focus-visible .product-box,
+    .product-card:active .product-box {
+      opacity: 0;
+      transform: scale(1.03);
+    }
+
+    .product-card:hover .product-shoe,
+    .product-card:focus-visible .product-shoe,
+    .product-card:active .product-shoe {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .product-action {
+      border: 1px solid rgba(216, 191, 160, 0.35);
+      border-radius: 999px;
+      color: #d8bfa0;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+      font-weight: 800;
+      line-height: 1;
+      padding: 0.5rem 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .product-modal {
+      align-items: center;
+      display: flex;
+      inset: 0;
+      justify-content: center;
+      padding: 1rem;
+      position: fixed;
+      z-index: 80;
+    }
+
+    .product-modal.hidden {
+      display: none;
+    }
+
+    .product-modal-backdrop {
+      background: rgba(5, 8, 15, 0.78);
+      border: 0;
+      cursor: pointer;
+      inset: 0;
+      position: absolute;
+    }
+
+    .product-modal-panel {
+      background: linear-gradient(160deg, rgba(55, 66, 84, 0.98), rgba(14, 20, 36, 0.98));
+      border: 1px solid rgba(138, 143, 163, 0.25);
+      border-radius: 8px;
+      box-shadow: 0 40px 140px -45px rgba(0, 0, 0, 0.98);
+      max-height: min(88vh, 840px);
+      max-width: 980px;
+      overflow: auto;
+      padding: 1rem;
+      position: relative;
+      width: min(100%, 980px);
+    }
+
+    .product-modal-close {
+      align-items: center;
+      background: rgba(14, 20, 36, 0.78);
+      border: 1px solid rgba(138, 143, 163, 0.24);
+      border-radius: 999px;
+      color: #ececec;
+      display: inline-flex;
+      height: 2.5rem;
+      justify-content: center;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      transition: border-color 180ms ease, transform 180ms ease;
+      width: 2.5rem;
+      z-index: 1;
+    }
+
+    .product-modal-close:hover,
+    .product-modal-close:focus-visible {
+      border-color: rgba(216, 191, 160, 0.6);
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .product-modal-close svg {
+      height: 1.2rem;
+      width: 1.2rem;
+    }
+
+    .product-modal-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .product-modal-image-wrap {
+      aspect-ratio: 4 / 3;
+      background: #0e1424;
+      border: 1px solid rgba(138, 143, 163, 0.16);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .product-modal-image {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+
+    .product-modal-content {
+      padding: 0.5rem 0.25rem 0.25rem;
+    }
+
+    .size-option {
+      border: 1px solid rgba(138, 143, 163, 0.28);
+      border-radius: 8px;
+      color: #ececec;
+      font-weight: 800;
+      min-height: 2.65rem;
+      transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .size-option:hover,
+    .size-option:focus-visible,
+    .size-option.is-selected {
+      background: rgba(216, 191, 160, 0.14);
+      border-color: rgba(216, 191, 160, 0.65);
+      color: #d8bfa0;
+      outline: none;
+      transform: translateY(-1px);
+    }
+
+    .purchase-primary,
+    .purchase-secondary {
+      align-items: center;
+      border-radius: 999px;
+      display: inline-flex;
+      font-size: 0.95rem;
+      font-weight: 800;
+      justify-content: center;
+      min-height: 3rem;
+      transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease;
+      width: 100%;
+    }
+
+    .purchase-primary {
+      background: #d8bfa0;
+      border: 1px solid #d8bfa0;
+      color: #0e1424;
+    }
+
+    .purchase-secondary {
+      background: rgba(14, 20, 36, 0.34);
+      border: 1px solid rgba(138, 143, 163, 0.3);
+      color: #ececec;
+    }
+
+    .purchase-primary:hover,
+    .purchase-primary:focus-visible,
+    .purchase-secondary:hover,
+    .purchase-secondary:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .purchase-secondary:hover,
+    .purchase-secondary:focus-visible {
+      border-color: rgba(216, 191, 160, 0.55);
+    }
+
+    .purchase-summary {
+      border: 1px solid rgba(138, 143, 163, 0.18);
+      border-radius: 8px;
+      background: rgba(14, 20, 36, 0.35);
+      color: #adbbc6;
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+    }
+
+    .purchase-summary.is-active {
+      border-color: rgba(216, 191, 160, 0.44);
+      color: #ececec;
+    }
+
+    .purchase-summary span {
+      color: #d8bfa0;
+      font-weight: 800;
+    }
+
+    @media (min-width: 820px) {
+      .product-modal-panel {
+        padding: 1.25rem;
+      }
+
+      .product-modal-grid {
+        grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      }
+
+      .product-modal-content {
+        padding: 1.25rem 1rem 1rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .info-link {
+        padding: 0.65rem 0.85rem;
+      }
+
+      .product-card {
+        padding: 0.6rem;
+      }
+    }
+  </style>
+
+  <script>
+    const productCards = document.querySelectorAll("[data-product-card]");
+    const modal = document.getElementById("product-modal");
+    const closeButtons = document.querySelectorAll("[data-close-product-modal]");
+    const modalImage = document.getElementById("product-modal-image");
+    const modalTitle = document.getElementById("product-modal-title");
+    const modalColor = document.getElementById("product-modal-color");
+    const modalPrice = document.getElementById("product-modal-price");
+    const modalDescription = document.getElementById("product-modal-description");
+    const sizeButtons = document.querySelectorAll(".size-option");
+    const addToBagButton = document.getElementById("add-to-bag-button");
+    const buyNowButton = document.getElementById("buy-now-button");
+    const purchaseSummary = document.getElementById("purchase-summary");
+    const summaryModel = document.getElementById("summary-model");
+    const summarySize = document.getElementById("summary-size");
+
+    let selectedProduct = "";
+    let selectedSize = "5";
+
+    const setSummary = (message: string, isActive = false) => {
+      if (!purchaseSummary) return;
+      purchaseSummary.innerHTML = message;
+      purchaseSummary.classList.toggle("is-active", isActive);
+    };
+
+    const setSelectedSize = (size: string) => {
+      selectedSize = size;
+      sizeButtons.forEach((button) => {
+        const isSelected = button.getAttribute("data-size") === size;
+        button.classList.toggle("is-selected", isSelected);
+        button.setAttribute("aria-pressed", String(isSelected));
+      });
+      if (summarySize) summarySize.textContent = size;
+      setSummary(`Ready to purchase <span>${selectedProduct}</span> in size <span>${selectedSize}</span>.`);
+    };
+
+    const openModal = (card: Element) => {
+      selectedProduct = card.getAttribute("data-name") || "";
+      selectedSize = "5";
+
+      if (modalImage) {
+        modalImage.setAttribute("src", card.getAttribute("data-shoe-image") || "");
+        modalImage.setAttribute("alt", `${selectedProduct} sneaker`);
+      }
+      if (modalTitle) modalTitle.textContent = selectedProduct;
+      if (modalColor) modalColor.textContent = card.getAttribute("data-color") || "";
+      if (modalPrice) modalPrice.textContent = card.getAttribute("data-price") || "";
+      if (modalDescription) modalDescription.textContent = card.getAttribute("data-description") || "";
+      if (summaryModel) summaryModel.textContent = selectedProduct;
+
+      setSelectedSize(selectedSize);
+      modal?.classList.remove("hidden");
+      modal?.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+
+    const closeModal = () => {
+      modal?.classList.add("hidden");
+      modal?.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+
+    productCards.forEach((card) => {
+      card.addEventListener("click", () => openModal(card));
+    });
+
+    closeButtons.forEach((button) => {
+      button.addEventListener("click", closeModal);
+    });
+
+    sizeButtons.forEach((button) => {
+      button.addEventListener("click", () => setSelectedSize(button.getAttribute("data-size") || selectedSize));
+    });
+
+    addToBagButton?.addEventListener("click", () => {
+      setSummary(`<span>${selectedProduct}</span> size <span>${selectedSize}</span> was added to the bag.`, true);
+    });
+
+    buyNowButton?.addEventListener("click", () => {
+      setSummary(`Checkout ready for <span>${selectedProduct}</span>, size <span>${selectedSize}</span>. Total: <span>${modalPrice?.textContent || ""}</span>.`, true);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeModal();
+    });
+  </script>
+</BaseLayout>
