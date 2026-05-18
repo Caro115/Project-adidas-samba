@@ -18,6 +18,12 @@ const navLinks = [
   { href: "/campaigns", label: "Marketing Strategy" }
 ];
 
+const quickLinks = [
+  { href: "/economic-analysis", label: "Open analysis" },
+  { href: "/campaigns", label: "Campaign strategy" },
+  { href: "#project-team", label: "Team credits" }
+];
+
 const year = new Date().getFullYear();
 ---
 <!DOCTYPE html>
@@ -33,35 +39,111 @@ const year = new Date().getFullYear();
   </head>
   <body class="overflow-x-hidden bg-gradient-to-br from-[#0e1424] to-[#1a2f3d] text-[#ececec]">
     <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_800px_at_bottom_right,_rgba(220,223,228,0.08),_transparent)]"></div>
-    <header class="sticky top-0 z-20 border-b border-[#8a8fa3]/20 bg-[#0e1424]/95 backdrop-blur-xl">
-      <div class="section-shell flex flex-col gap-3 py-4 lg:flex-row lg:items-center lg:justify-between lg:py-5">
-        <a href="/" class="max-w-full text-[10px] font-semibold uppercase leading-relaxed tracking-[0.2em] text-[#ececec] sm:text-[11px] sm:tracking-[0.24em]">
-          Adidas Samba · Economics Case
-        </a>
-        <nav aria-label="Primary" class="nav-scroll w-full overflow-x-auto lg:w-auto">
-          <ul class="flex w-max gap-2 pb-1 lg:w-auto lg:flex-wrap lg:justify-end lg:pb-0">
-            {navLinks.map((item) => (
-              <li>
+    <header class="sticky top-0 z-30">
+      <nav class="relative border-b border-white/10 bg-[#0e1424]/80 shadow-[0_18px_70px_-45px_rgba(0,0,0,0.95)] backdrop-blur-xl after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
+        <div class="mx-auto w-full max-w-[1180px] px-2 sm:px-6 md:px-8 lg:px-10 xl:px-12">
+          <div class="relative flex h-16 items-center justify-between">
+            <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
+              <button
+                id="mobile-menu-button"
+                type="button"
+                class="relative inline-flex items-center justify-center rounded-md p-2 text-[#adbbc6] transition hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-[#d8bfa0]"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span class="absolute -inset-0.5"></span>
+                <span class="sr-only">Open main menu</span>
+                <svg id="mobile-menu-open-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="size-6">
+                  <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <svg id="mobile-menu-close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" class="hidden size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
+              <a href="/" class="flex shrink-0 items-center gap-3">
+                <span class="grid size-9 place-items-center rounded-xl border border-white/10 bg-white/[0.04] shadow-[0_16px_45px_-28px_rgba(255,255,255,0.7)]">
+                  <img src="/favicon.svg" alt="" class="size-6" />
+                </span>
+                <span class="hidden flex-col leading-none sm:flex">
+                  <span class="text-sm font-semibold tracking-tight text-white">Adidas Samba</span>
+                  <span class="mt-1 text-[10px] uppercase tracking-[0.18em] text-[#adbbc6]">Economics Case</span>
+                </span>
+              </a>
+
+              <div class="hidden md:ml-6 md:flex md:items-center">
+                <div class="flex space-x-2">
+                  {navLinks.map((item) => {
+                    const isCurrent = currentPath === normalizePath(item.href);
+                    return (
+                      <a
+                        href={item.href}
+                        aria-current={isCurrent ? "page" : undefined}
+                        class:list={[
+                          "rounded-md px-3 py-2 text-sm font-medium transition",
+                          isCurrent
+                            ? "bg-[#374254]/75 text-white shadow-inner shadow-white/5"
+                            : "text-[#adbbc6] hover:bg-white/5 hover:text-white"
+                        ]}
+                      >
+                        {item.label}
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+          
+
+              
+
+                <div
+                  id="project-menu"
+                  class="absolute right-0 z-40 mt-3 hidden w-52 origin-top-right rounded-xl bg-[#111827] py-1 shadow-[0_24px_80px_-35px_rgba(0,0,0,0.95)] outline outline-1 -outline-offset-1 outline-white/10"
+                  role="menu"
+                  aria-labelledby="project-menu-button"
+                >
+                  {quickLinks.map((item) => (
+                    <a href={item.href} class="block px-4 py-2.5 text-sm text-[#d6dde6] transition hover:bg-white/5 hover:text-white focus:bg-white/5 focus:outline-none" role="menuitem">
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden border-t border-white/10 bg-[#0e1424]/95 md:hidden">
+          <div class="space-y-1 px-3 pb-3 pt-2">
+            {navLinks.map((item) => {
+              const isCurrent = currentPath === normalizePath(item.href);
+              return (
                 <a
                   href={item.href}
+                  aria-current={isCurrent ? "page" : undefined}
                   class:list={[
-                    "nav-pill",
-                    "text-[#adbbc6] hover:text-[#adbbc6]",
-                     currentPath === normalizePath(item.href) && "border-[#8a8fa3]/50 bg-[#374254]/12 text-[#ececec]"
+                    "block rounded-md px-3 py-2 text-base font-medium transition",
+                    isCurrent
+                      ? "bg-[#374254]/75 text-white"
+                      : "text-[#adbbc6] hover:bg-white/5 hover:text-white"
                   ]}
                 >
                   {item.label}
                 </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+              );
+            })}
+          </div>
+        </div>
+      </nav>
     </header>
     <main class="pb-16 sm:pb-20 lg:pb-24">
       <slot />
     </main>
-    <footer class="border-t border-[#8a8fa3]/20 bg-[#374254]">
+    <footer id="project-team" class="border-t border-[#8a8fa3]/20 bg-[#374254]">
       <div class="section-shell grid gap-8 py-10 sm:py-12 md:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p class="section-kicker mb-3">University project framing</p>
@@ -86,6 +168,44 @@ const year = new Date().getFullYear();
         © {year} Adidas Samba Economic Analysis · Academic use
       </div>
     </footer>
+    <script>
+      const mobileButton = document.getElementById("mobile-menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const openIcon = document.getElementById("mobile-menu-open-icon");
+      const closeIcon = document.getElementById("mobile-menu-close-icon");
+      const projectButton = document.getElementById("project-menu-button");
+      const projectMenu = document.getElementById("project-menu");
+
+      mobileButton?.addEventListener("click", () => {
+        const expanded = mobileButton.getAttribute("aria-expanded") === "true";
+        mobileButton.setAttribute("aria-expanded", String(!expanded));
+        mobileMenu?.classList.toggle("hidden", expanded);
+        openIcon?.classList.toggle("hidden", !expanded);
+        closeIcon?.classList.toggle("hidden", expanded);
+      });
+
+      projectButton?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const expanded = projectButton.getAttribute("aria-expanded") === "true";
+        projectButton.setAttribute("aria-expanded", String(!expanded));
+        projectMenu?.classList.toggle("hidden", expanded);
+      });
+
+      document.addEventListener("click", () => {
+        projectButton?.setAttribute("aria-expanded", "false");
+        projectMenu?.classList.add("hidden");
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        mobileButton?.setAttribute("aria-expanded", "false");
+        mobileMenu?.classList.add("hidden");
+        openIcon?.classList.remove("hidden");
+        closeIcon?.classList.add("hidden");
+        projectButton?.setAttribute("aria-expanded", "false");
+        projectMenu?.classList.add("hidden");
+      });
+    </script>
   </body>
 </html>
 <!-- this section is the footer -->
