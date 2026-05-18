@@ -12,10 +12,10 @@ const currentPath = normalizePath(Astro.url.pathname);
 
 const navLinks = [
   { href: "/", label: "Overview" },
-  { href: "/value-proposition", label: "Value Proposition" },
-  { href: "/market-pricing", label: "Pricing & Competitors" },
-  { href: "/campaigns", label: "Campaigns" },
-  { href: "/economic-analysis", label: "Economic Analysis" }
+  { href: "/value-proposition", label: "Product & Value" },
+  { href: "/market-pricing", label: "Market Structure" },
+  { href: "/economic-analysis", label: "Micro Analysis" },
+  { href: "/campaigns", label: "Marketing Strategy" }
 ];
 
 const year = new Date().getFullYear();
@@ -31,15 +31,15 @@ const year = new Date().getFullYear();
     />
     <title>{title}</title>
   </head>
-  <body class="bg-gradient-to-br from-[#0e1424] to-[#1a2f3d] text-[#ececec]">
+  <body class="overflow-x-hidden bg-gradient-to-br from-[#0e1424] to-[#1a2f3d] text-[#ececec]">
     <div class="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_800px_at_bottom_right,_rgba(220,223,228,0.08),_transparent)]"></div>
     <header class="sticky top-0 z-20 border-b border-[#8a8fa3]/20 bg-[#0e1424]/95 backdrop-blur-xl">
-      <div class="section-shell flex flex-col gap-4 py-5 lg:flex-row lg:items-center lg:justify-between">
-        <a href="/" class="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#ececec]">
+      <div class="section-shell flex flex-col gap-3 py-4 lg:flex-row lg:items-center lg:justify-between lg:py-5">
+        <a href="/" class="max-w-full text-[10px] font-semibold uppercase leading-relaxed tracking-[0.2em] text-[#ececec] sm:text-[11px] sm:tracking-[0.24em]">
           Adidas Samba · Economics Case
         </a>
-        <nav aria-label="Primary">
-          <ul class="flex flex-wrap gap-2">
+        <nav aria-label="Primary" class="nav-scroll w-full overflow-x-auto lg:w-auto">
+          <ul class="flex w-max gap-2 pb-1 lg:w-auto lg:flex-wrap lg:justify-end lg:pb-0">
             {navLinks.map((item) => (
               <li>
                 <a
@@ -58,14 +58,14 @@ const year = new Date().getFullYear();
         </nav>
       </div>
     </header>
-    <main class="pb-24">
+    <main class="pb-16 sm:pb-20 lg:pb-24">
       <slot />
     </main>
     <footer class="border-t border-[#8a8fa3]/20 bg-[#374254]">
-      <div class="section-shell grid gap-8 py-12 md:grid-cols-[1.1fr_0.9fr]">
+      <div class="section-shell grid gap-8 py-10 sm:py-12 md:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p class="section-kicker mb-3">University project framing</p>
-          <h2 class="text-2xl font-semibold tracking-tight text-[#ececec]">Adidas Samba in Monopolistic Competition</h2>
+          <h2 class="text-xl font-semibold tracking-tight text-[#ececec] sm:text-2xl">Adidas Samba in Monopolistic Competition</h2>
           <p class="mt-3 max-w-2xl text-sm leading-relaxed text-[#adbbc6]">
            Teamwork: 7 students collaborated on research, analysis, and presentation design, dividing work by project section while maintaining a unified narrative and visual style.
            Names: Carolina Diaz, Regina Carriera, Regina Perez, Natalia Martinez, Daniela Contreras, Korina Vilchez, Valeria Gonzales.
@@ -82,7 +82,7 @@ const year = new Date().getFullYear();
           </article>
         </div>
       </div>
-      <div class="section-shell border-t border-[#8a8fa3]/20 py-4 text-xs tracking-[0.16em] text-[#adbbc6]">
+      <div class="section-shell border-t border-[#8a8fa3]/20 py-4 text-xs leading-relaxed tracking-[0.08em] text-[#adbbc6] sm:tracking-[0.16em]">
         © {year} Adidas Samba Economic Analysis · Academic use
       </div>
     </footer>

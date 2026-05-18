@@ -1,6 +1,24 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+const marketingStrategies = [
+  {
+    label: "4.1 Pricing strategy",
+    title: "Accessible premium pricing",
+    detail: "Keep Samba in a competitive premium range so it feels valuable but still reachable for Gen Z, Millennials, and urban lifestyle buyers."
+  },
+  {
+    label: "4.2 Promotion",
+    title: "Audience-specific campaigns",
+    detail: "Use TikTok, Instagram, creator partnerships, retail displays, and clear product information to make online and physical visits feel direct and memorable."
+  },
+  {
+    label: "4.3 Positioning",
+    title: "High-value everyday icon",
+    detail: "Position Samba as a timeless, slim, versatile sneaker that meets high expectations without losing its streetwear accessibility."
+  }
+];
+
 const influencerStages = [
   {
     stage: "Creator seeding",
@@ -53,19 +71,99 @@ const celebrityCollabExamples = [
     detail: "Editorial collaborations elevate premium perception and willingness to pay."
   }
 ];
+
+const campaignVisuals = [
+  {
+    src: "/images/Photos for the website/Last Call for School Styles.jpg",
+    alt: "Adidas Samba campus campaign visual",
+    channel: "Campus drop",
+    tag: "#BackToSamba",
+    detail: "A school-style angle makes the product feel natural for daily routines."
+  },
+  {
+    src: "/images/Photos for the website/ADIDAS POSTER.jpg",
+    alt: "Adidas Samba poster campaign visual",
+    channel: "Poster campaign",
+    tag: "Icon frame",
+    detail: "A bold poster image raises recall and makes the shoe feel culturally important."
+  },
+  {
+    src: "/images/Photos for the website/Samba brillos.jpg",
+    alt: "Adidas Samba fashion variation visual",
+    channel: "Fashion reel",
+    tag: "#SambaMinimal",
+    detail: "A more expressive styling variation helps the campaign reach fashion-led buyers."
+  }
+];
 ---
 
 <BaseLayout
-  title="Adidas Samba | Campaigns and Video Strategy"
-  description="Dedicated campaign analysis page with embedded video, influencer strategy, and social proof simulations."
+  title="Adidas Samba | Marketing Strategy"
+  description="Pricing, promotion, positioning, influencer strategy, and social proof for Adidas Samba."
 >
   <section class="page-intro">
-    <p class="section-kicker mb-3">Section 03</p>
-    <h1 class="section-title mb-4">Campaigns and Video Strategy</h1>
+    <p class="section-kicker mb-3">Section 04</p>
+    <h1 class="section-title mb-4">Marketing Strategy</h1>
     <p class="muted-copy max-w-3xl">
-      This page shows how influencer ecosystems and visual storytelling shape demand behavior,
-      strengthen symbolic value, and reinforce Adidas Samba pricing power.
+      This page explains how Adidas Samba should be priced, promoted, and positioned in a market where
+      many brands compete through differentiation instead of identical products.
     </p>
+  </section>
+
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="mb-6">
+      <p class="section-kicker mb-3">Strategy blueprint</p>
+      <h2 class="section-title mb-4">Turning market structure into marketing decisions</h2>
+      <p class="max-w-4xl leading-relaxed text-[#adbbc6]">
+        Because the sneaker market has many substitutes, the strategy must protect Samba's perceived value
+        while keeping the product easy to understand, easy to style, and easy to desire.
+      </p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3">
+      {marketingStrategies.map((strategy) => (
+        <article class="glass-card p-5 transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/40">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">{strategy.label}</p>
+          <h3 class="mt-2 text-lg font-semibold text-[#ececec]">{strategy.title}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-[#adbbc6]">{strategy.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="mb-6">
+      <p class="section-kicker mb-3">Creative direction board</p>
+      <h2 class="section-title mb-4">A campaign system built for social attention</h2>
+      <p class="max-w-4xl leading-relaxed text-[#adbbc6]">
+        The promotion strategy works best when each image has a clear job: make Samba feel wearable,
+        memorable, and trend-ready in different channels.
+      </p>
+    </div>
+    <div class="grid gap-4 lg:grid-cols-[0.8fr_1.2fr_0.8fr]">
+      {campaignVisuals.map((item, index) => (
+        <article class:list={[
+          "group overflow-hidden rounded-3xl border border-[#8a8fa3]/14 bg-[#0e1424]/70 shadow-[0_28px_80px_-45px_rgba(0,0,0,0.85)]",
+          index === 1 && "lg:-mt-6"
+        ]}>
+          <div class:list={[
+            "overflow-hidden",
+            index === 1 ? "aspect-[16/11] sm:aspect-[4/5]" : "aspect-[16/11] sm:aspect-[3/4]"
+          ]}>
+            <img
+              src={item.src}
+              alt={item.alt}
+              class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">{item.channel}</p>
+            <h3 class="mt-2 text-xl font-semibold text-[#ececec]">{item.tag}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#adbbc6]">{item.detail}</p>
+          </div>
+        </article>
+      ))}
+    </div>
   </section>
 
   <section class="section-shell pb-16 sm:pb-18">
@@ -75,8 +173,8 @@ const celebrityCollabExamples = [
         <video
           controls
           preload="metadata"
-          poster="/images/Banner_Samba.jpg"
-          class="w-full rounded-2xl border border-[#8a8fa3]/10 bg-[#374254]/30"
+          poster="/images/Photos for the website/ADIDAS POSTER.jpg"
+          class="aspect-video w-full rounded-2xl border border-[#8a8fa3]/10 bg-[#374254]/30 object-cover"
         >
           <source src="/images/Samba_video.mp4" type="video/mp4" />
         </video>
@@ -89,10 +187,10 @@ const celebrityCollabExamples = [
         <p class="mb-3 text-xs uppercase tracking-[0.18em] text-[#adbbc6]">Influencer strategy explanation</p>
         <div class="space-y-4">
           {influencerStages.map((item, index) => (
-              <div class="rounded-2xl border border-[#8a8fa3]/10 bg-[#0e1424]/6 p-3 sm:p-4 transition duration-300 hover:border-[#8a8fa3]/40 hover:bg-[#374254]/8">
-                <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">Phase {index + 1}</p>
-                <h3 class="mt-1 text-base sm:text-lg font-semibold text-[#ececec]">{item.stage}</h3>
-                <p class="mt-2 text-sm leading-relaxed text-[#adbbc6]">{item.detail}</p>
+            <div class="rounded-2xl border border-[#8a8fa3]/10 bg-[#0e1424]/6 p-3 transition duration-300 hover:border-[#8a8fa3]/40 hover:bg-[#374254]/8 sm:p-4">
+              <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">Phase {index + 1}</p>
+              <h3 class="mt-1 text-base font-semibold text-[#ececec] sm:text-lg">{item.stage}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-[#adbbc6]">{item.detail}</p>
             </div>
           ))}
         </div>
@@ -107,10 +205,10 @@ const celebrityCollabExamples = [
     </div>
     <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
       {socialProofBlocks.map((item) => (
-          <article class="glass-card p-5 transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/40">
-            <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">{item.title}</p>
-            <p class="mt-2 text-3xl font-semibold text-[#ececec]">{item.value}</p>
-            <p class="mt-2 text-sm leading-relaxed text-[#adbbc6]">{item.detail}</p>
+        <article class="glass-card p-5 transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/40">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">{item.title}</p>
+          <p class="mt-2 text-3xl font-semibold text-[#ececec]">{item.value}</p>
+          <p class="mt-2 text-sm leading-relaxed text-[#adbbc6]">{item.detail}</p>
         </article>
       ))}
     </div>
@@ -122,31 +220,31 @@ const celebrityCollabExamples = [
       <h2 class="section-title mb-4">TikTok and Instagram scenario modeling</h2>
     </div>
     <div class="grid gap-6 md:grid-cols-2">
-        <article class="relative overflow-hidden rounded-3xl border border-[#8a8fa3]/35 bg-gradient-to-br from-[#0e1424] via-[#374254] to-[#0e1424] p-6">
-          <div class="absolute -left-10 -top-10 h-32 w-32 rounded-full bg-[#374254]/20 blur-3xl"></div>
-          <p class="text-xs uppercase tracking-[0.18em] text-[#adbbc6]">TikTok trend simulation</p>
-          <h3 class="mt-3 text-2xl font-semibold text-[#ececec]">#SambaRotation</h3>
-          <p class="mt-2 leading-relaxed text-[#adbbc6]">
-            Outfit-transition content increases trend visibility and broadens adoption among price-aware consumers.
-          </p>
-          <div class="mt-5 flex items-center justify-between text-sm text-[#adbbc6]">
-            <span>Simulated views: 8.7M</span>
-            <span>Engagement: 11.8%</span>
-          </div>
-        </article>
+      <article class="relative overflow-hidden rounded-3xl border border-[#8a8fa3]/35 bg-gradient-to-br from-[#0e1424] via-[#374254] to-[#0e1424] p-5 sm:p-6">
+        <div class="absolute -left-10 -top-10 h-32 w-32 rounded-full bg-[#374254]/20 blur-3xl"></div>
+        <p class="text-xs uppercase tracking-[0.18em] text-[#adbbc6]">TikTok trend simulation</p>
+        <h3 class="mt-3 text-2xl font-semibold text-[#ececec]">#SambaRotation</h3>
+        <p class="mt-2 leading-relaxed text-[#adbbc6]">
+          Outfit-transition content increases trend visibility and broadens adoption among price-aware consumers.
+        </p>
+        <div class="mt-5 flex flex-col gap-1 text-sm text-[#adbbc6] sm:flex-row sm:items-center sm:justify-between">
+          <span>Simulated views: 8.7M</span>
+          <span>Engagement: 11.8%</span>
+        </div>
+      </article>
 
-        <article class="relative overflow-hidden rounded-3xl border border-[#8a8fa3]/35 bg-gradient-to-br from-[#0e1424] via-[#374254] to-[#0e1424] p-6">
-          <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#374254]/20 blur-3xl"></div>
-          <p class="text-xs uppercase tracking-[0.18em] text-[#adbbc6]">Instagram trend simulation</p>
-          <h3 class="mt-3 text-2xl font-semibold text-[#ececec]">#SambaMinimal</h3>
-          <p class="mt-2 leading-relaxed text-[#adbbc6]">
-            Editorial reels reinforce premium aesthetics, increasing symbolic value and aspirational positioning.
-          </p>
-          <div class="mt-5 flex items-center justify-between text-sm text-[#adbbc6]">
-            <span>Simulated saves: 420K</span>
-            <span>Profile taps: +19%</span>
-          </div>
-        </article>
+      <article class="relative overflow-hidden rounded-3xl border border-[#8a8fa3]/35 bg-gradient-to-br from-[#0e1424] via-[#374254] to-[#0e1424] p-5 sm:p-6">
+        <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#374254]/20 blur-3xl"></div>
+        <p class="text-xs uppercase tracking-[0.18em] text-[#adbbc6]">Instagram trend simulation</p>
+        <h3 class="mt-3 text-2xl font-semibold text-[#ececec]">#SambaMinimal</h3>
+        <p class="mt-2 leading-relaxed text-[#adbbc6]">
+          Editorial reels reinforce premium aesthetics, increasing symbolic value and aspirational positioning.
+        </p>
+        <div class="mt-5 flex flex-col gap-1 text-sm text-[#adbbc6] sm:flex-row sm:items-center sm:justify-between">
+          <span>Simulated saves: 420K</span>
+          <span>Profile taps: +19%</span>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -155,9 +253,9 @@ const celebrityCollabExamples = [
       <p class="mb-3 text-xs uppercase tracking-[0.18em] text-[#adbbc6]">Celebrity collaboration examples</p>
       <div class="grid gap-4 md:grid-cols-3">
         {celebrityCollabExamples.map((item) => (
-            <article class="rounded-2xl border border-[#8a8fa3]/10 bg-[#0e1424]/6 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/40 hover:bg-[#374254]/8">
-              <h3 class="text-base font-semibold text-[#ececec]">{item.title}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-[#adbbc6]">{item.detail}</p>
+          <article class="rounded-2xl border border-[#8a8fa3]/10 bg-[#0e1424]/6 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/40 hover:bg-[#374254]/8">
+            <h3 class="text-base font-semibold text-[#ececec]">{item.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#adbbc6]">{item.detail}</p>
           </article>
         ))}
       </div>

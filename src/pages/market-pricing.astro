@@ -1,19 +1,80 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+const marketStructureTraits = [
+  "Large number of competing firms",
+  "No single firm dominates the full sneaker market",
+  "Some price control through brand differentiation",
+  "Competition through design, image, heritage, and promotion",
+  "Relatively free entry and exit in the long run"
+];
+
+const entryExitCases = [
+  {
+    title: "When firms earn economic profit",
+    detail: "New competitors enter with similar lifestyle sneakers, increasing competition and reducing long-run profit."
+  },
+  {
+    title: "When firms experience losses",
+    detail: "Some brands leave or reduce investment, lowering competition and allowing prices to recover."
+  }
+];
+
+const pricingDrivers = [
+  {
+    title: "Accessible premium",
+    detail: "Samba can charge a premium without moving into the highest luxury sneaker range."
+  },
+  {
+    title: "Differentiated design",
+    detail: "The T-toe, gum sole, and terrace heritage make the product less interchangeable."
+  },
+  {
+    title: "Substitute pressure",
+    detail: "Nike, Converse, Puma, and New Balance limit Adidas from raising prices without restraint."
+  }
+];
+
+const marketVisuals = [
+  {
+    src: "/images/Photos for the website/Originals Sneakers & Clothing _ adidas US.jpg",
+    alt: "Adidas Originals product shelf visual",
+    label: "Brand shelf",
+    detail: "Adidas protects Samba by placing it inside a broader Originals lifestyle universe."
+  },
+  {
+    src: "/images/Photos for the website/Sneakers Men.jpg",
+    alt: "Men's sneaker assortment visual",
+    label: "Substitute pressure",
+    detail: "Consumers compare Samba with many casual sneaker alternatives before buying."
+  },
+  {
+    src: "/images/Photos for the website/adidas - Original Trainers.jpg",
+    alt: "Adidas original trainers visual",
+    label: "Internal competition",
+    detail: "Even within Adidas, similar retro models compete for attention and budget."
+  },
+  {
+    src: "/images/Photos for the website/Shop Shoes at Unclaimed Baggage!.jpg",
+    alt: "Lifestyle sneaker shopping visual",
+    label: "Retail context",
+    detail: "Shelf presence and product photography influence perceived value at the moment of choice."
+  }
+];
+
 const competitorData = [
   {
     brand: "Adidas Samba",
-    priceRange: "$100–$130",
+    priceRange: "$100-$130",
     brandValue: "95/100",
     differentiation: "Terrace heritage, gum sole DNA, minimalist profile",
-    elasticity: "Low–Medium (relatively inelastic)",
+    elasticity: "Low-Medium",
     symbolicValue: "Very high",
     symbolicScore: 96
   },
   {
     brand: "Nike Cortez",
-    priceRange: "$75–$110",
+    priceRange: "$75-$110",
     brandValue: "90/100",
     differentiation: "Retro running identity and Americana styling",
     elasticity: "Medium",
@@ -22,16 +83,16 @@ const competitorData = [
   },
   {
     brand: "Puma Palermo",
-    priceRange: "$70–$110",
+    priceRange: "$70-$110",
     brandValue: "78/100",
     differentiation: "Football-inspired silhouette with trend collabs",
-    elasticity: "Medium–High",
-    symbolicValue: "Medium–High",
+    elasticity: "Medium-High",
+    symbolicValue: "Medium-High",
     symbolicScore: 77
   },
   {
     brand: "Converse Chuck Taylor",
-    priceRange: "$55–$90",
+    priceRange: "$55-$90",
     brandValue: "88/100",
     differentiation: "Iconic canvas model and everyday universality",
     elasticity: "High",
@@ -40,54 +101,130 @@ const competitorData = [
   },
   {
     brand: "New Balance 550",
-    priceRange: "$110–$150",
+    priceRange: "$110-$150",
     brandValue: "86/100",
     differentiation: "Retro basketball shape with premium lifestyle cues",
     elasticity: "Medium",
-    symbolicValue: "Medium–High",
+    symbolicValue: "Medium-High",
     symbolicScore: 84
   }
 ];
 ---
 
 <BaseLayout
-  title="Adidas Samba | Market Pricing and Competitor Comparison"
-  description="Dedicated pricing analysis and competitor comparison for Adidas Samba in monopolistic competition."
+  title="Adidas Samba | Market Structure and Pricing"
+  description="Market structure, barriers to entry, pricing power, and competitor comparison for Adidas Samba."
 >
   <section class="page-intro">
     <p class="section-kicker mb-3">Section 02</p>
-    <h1 class="section-title mb-4">Market Pricing and Competitor Comparison</h1>
+    <h1 class="section-title mb-4">Market Structure Analysis</h1>
     <p class="muted-copy max-w-3xl">
-      This page focuses on pricing power, substitute pressure, and direct benchmarking against major
-      competitors in the retro lifestyle sneaker segment.
+      Adidas Samba operates in monopolistic competition: many firms sell similar sneakers, but each brand
+      attempts to create preference through design, history, image, and consumer perception.
     </p>
   </section>
 
   <section class="section-shell pb-16 sm:pb-18">
-    <div class="relative overflow-hidden rounded-2xl sm:rounded-[2rem] border border-[#8a8fa3]/12 bg-[#374254] p-6 sm:p-7 md:p-10 text-[#ececec] shadow-[0_30px_80px_-30px_rgba(0,0,0,0.4)]">
-      <div class="absolute -right-8 sm:-right-12 -top-8 sm:-top-12 h-32 sm:h-44 w-32 sm:w-44 rounded-full bg-[#374254]/20 blur-3xl"></div>
+    <div class="grid gap-6 lg:grid-cols-[1fr_1.05fr]">
+      <article class="glass-card p-6 md:p-8">
+        <p class="section-kicker mb-3">2.1 Number of firms</p>
+        <h2 class="mb-4 text-2xl font-semibold tracking-tight text-[#ececec] sm:text-3xl">Monopolistic competition</h2>
+        <p class="leading-relaxed text-[#adbbc6]">
+          Monopolistic competition is a market structure where many firms sell similar but differentiated
+          products. This gives each firm some price-setting power while keeping entry and exit possible in
+          the long run.
+        </p>
+      </article>
+      <div class="grid gap-3 sm:grid-cols-2">
+        {marketStructureTraits.map((trait) => (
+          <article class="rounded-2xl border border-[#8a8fa3]/12 bg-[#0e1424]/60 p-4 shadow-[0_24px_70px_-45px_rgba(0,0,0,0.9)]">
+            <p class="text-sm font-medium leading-relaxed text-[#ececec]">{trait}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="glass-card p-6 md:p-8">
+        <p class="section-kicker mb-3">2.2 Type of product</p>
+        <h2 class="mb-4 text-2xl font-semibold tracking-tight text-[#ececec] sm:text-3xl">A differentiated product</h2>
+        <p class="leading-relaxed text-[#adbbc6]">
+          Adidas Samba stands out through brand identity, historical legacy, and functional design qualities.
+          Even though other firms sell close substitutes, Samba is not perceived as identical by consumers.
+        </p>
+      </article>
+      <article class="glass-card p-6 md:p-8">
+        <p class="section-kicker mb-3">2.3 Barriers to entry</p>
+        <h2 class="mb-4 text-2xl font-semibold tracking-tight text-[#ececec] sm:text-3xl">Low legal barriers, high brand challenge</h2>
+        <p class="leading-relaxed text-[#adbbc6]">
+          New firms can enter the sneaker market, but building the same brand trust, cultural relevance,
+          and design recognition is difficult. This creates competitive pressure without making Samba fully
+          replaceable.
+        </p>
+      </article>
+    </div>
+    <div class="mt-5 grid gap-4 md:grid-cols-2">
+      {entryExitCases.map((item) => (
+        <article class="rounded-2xl border border-[#8a8fa3]/12 bg-[#0e1424]/60 p-5">
+          <h3 class="text-base font-semibold text-[#ececec]">{item.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-[#adbbc6]">{item.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="relative overflow-hidden rounded-2xl border border-[#8a8fa3]/12 bg-[#374254] p-6 text-[#ececec] shadow-[0_30px_80px_-30px_rgba(0,0,0,0.4)] sm:rounded-[2rem] sm:p-7 md:p-10">
+      <div class="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-[#374254]/20 blur-3xl sm:-right-12 sm:-top-12 sm:h-44 sm:w-44"></div>
       <div class="relative">
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#adbbc6]">Price position</p>
-        <h2 class="mt-3 text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">$100–$130 USD</h2>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#adbbc6]">2.4 Degree of pricing power</p>
+        <h2 class="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">$100-$130 USD</h2>
         <p class="mt-4 max-w-3xl text-sm leading-relaxed text-[#adbbc6] sm:text-base">
-          Samba sits in a defensible premium corridor: high enough to signal status and quality, but still within
-          reach for broad lifestyle adoption. This range is sustained by differentiation rather than cost leadership.
+          Samba has meaningful pricing power because its design and brand heritage are recognizable. That power
+          is limited by close substitutes from Nike, Converse, Puma, and New Balance, so the strongest strategy is
+          an accessible premium price rather than an extreme luxury price.
         </p>
         <div class="mt-6 grid gap-3 sm:grid-cols-3">
-          <article class="rounded-2xl border border-[#8a8fa3]/15 bg-[#0e1424]/6 p-3">
-            <p class="text-xs uppercase tracking-[0.16em] text-[#adbbc6]">Driver</p>
-            <p class="mt-1 text-sm font-semibold text-[#ececec]">Brand equity</p>
-          </article>
-          <article class="rounded-2xl border border-[#8a8fa3]/15 bg-[#0e1424]/6 p-3">
-            <p class="text-xs uppercase tracking-[0.16em] text-[#adbbc6]">Driver</p>
-            <p class="mt-1 text-sm font-semibold text-[#ececec]">Trend amplification</p>
-          </article>
-          <article class="rounded-2xl border border-[#8a8fa3]/15 bg-[#0e1424]/6 p-3">
-            <p class="text-xs uppercase tracking-[0.16em] text-[#adbbc6]">Constraint</p>
-            <p class="mt-1 text-sm font-semibold text-[#ececec]">Substitute availability</p>
-          </article>
+          {pricingDrivers.map((driver) => (
+            <article class="rounded-2xl border border-[#8a8fa3]/15 bg-[#0e1424]/6 p-3">
+              <p class="text-xs uppercase tracking-[0.16em] text-[#adbbc6]">Pricing factor</p>
+              <p class="mt-1 text-sm font-semibold text-[#ececec]">{driver.title}</p>
+              <p class="mt-2 text-xs leading-relaxed text-[#adbbc6]">{driver.detail}</p>
+            </article>
+          ))}
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="mb-6">
+      <p class="section-kicker mb-3">Market shelf</p>
+      <h2 class="section-title mb-4">Why substitute pressure limits pricing power</h2>
+      <p class="max-w-4xl leading-relaxed text-[#adbbc6]">
+        Monopolistic competition is easiest to see visually: the customer faces a shelf full of similar
+        sneakers, so Samba has to win through design identity and brand meaning.
+      </p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      {marketVisuals.map((item) => (
+        <article class="group overflow-hidden rounded-3xl border border-[#8a8fa3]/14 bg-[#0e1424]/70 shadow-[0_28px_80px_-45px_rgba(0,0,0,0.85)]">
+          <div class="aspect-[16/11] overflow-hidden sm:aspect-[4/5]">
+            <img
+              src={item.src}
+              alt={item.alt}
+              class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-4">
+            <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">{item.label}</p>
+            <p class="mt-2 text-sm leading-relaxed text-[#ececec]">{item.detail}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
@@ -103,7 +240,7 @@ const competitorData = [
     <div class="mb-6 grid gap-4 md:grid-cols-3">
       <article class="glass-card p-5">
         <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">Average competitor band</p>
-        <p class="mt-2 text-2xl font-semibold text-[#ececec]">$55–$150</p>
+        <p class="mt-2 text-2xl font-semibold text-[#ececec]">$55-$150</p>
       </article>
       <article class="glass-card p-5">
         <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">Samba brand value score</p>
@@ -115,30 +252,30 @@ const competitorData = [
       </article>
     </div>
 
-    <div class="overflow-x-auto rounded-3xl border border-[#8a8fa3]/12 bg-[#0e1424]/6">
-      <table class="w-full min-w-[920px]">
+    <div class="table-scroll max-w-full overflow-x-auto overscroll-x-contain rounded-2xl border border-[#8a8fa3]/12 bg-[#0e1424]/6 sm:rounded-3xl" tabindex="0" aria-label="Scrollable competitor comparison table">
+      <table class="w-full min-w-[760px] md:min-w-[920px]">
         <thead class="bg-[#374254]/20 text-left text-xs uppercase tracking-[0.18em] text-[#adbbc6]">
           <tr>
-            <th class="px-5 py-4">Product</th>
-            <th class="px-5 py-4">Price range</th>
-            <th class="px-5 py-4">Brand value</th>
-            <th class="px-5 py-4">Product differentiation</th>
-            <th class="px-5 py-4">Elasticity of demand</th>
-            <th class="px-5 py-4">Symbolic/social value</th>
+            <th class="px-3 py-3 sm:px-5 sm:py-4">Product</th>
+            <th class="px-3 py-3 sm:px-5 sm:py-4">Price range</th>
+            <th class="px-3 py-3 sm:px-5 sm:py-4">Brand value</th>
+            <th class="px-3 py-3 sm:px-5 sm:py-4">Product differentiation</th>
+            <th class="px-3 py-3 sm:px-5 sm:py-4">Elasticity of demand</th>
+            <th class="px-3 py-3 sm:px-5 sm:py-4">Symbolic/social value</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-[#8a8fa3]/10 text-sm">
+        <tbody class="divide-y divide-[#8a8fa3]/10 text-xs sm:text-sm">
           {competitorData.map((item) => (
             <tr class:list={[item.brand === "Adidas Samba" && "bg-[#374254]/12"]}>
-              <td class="px-5 py-4 font-semibold text-[#ececec]">{item.brand}</td>
-              <td class="px-5 py-4 text-[#adbbc6]">{item.priceRange}</td>
-              <td class="px-5 py-4 text-[#adbbc6]">{item.brandValue}</td>
-              <td class="px-5 py-4 text-[#adbbc6]">{item.differentiation}</td>
-              <td class="px-5 py-4 text-[#adbbc6]">{item.elasticity}</td>
-              <td class="px-5 py-4">
-                <div class="flex items-center gap-3">
+              <td class="px-3 py-3 font-semibold text-[#ececec] sm:px-5 sm:py-4">{item.brand}</td>
+              <td class="px-3 py-3 text-[#adbbc6] sm:px-5 sm:py-4">{item.priceRange}</td>
+              <td class="px-3 py-3 text-[#adbbc6] sm:px-5 sm:py-4">{item.brandValue}</td>
+              <td class="px-3 py-3 text-[#adbbc6] sm:px-5 sm:py-4">{item.differentiation}</td>
+              <td class="px-3 py-3 text-[#adbbc6] sm:px-5 sm:py-4">{item.elasticity}</td>
+              <td class="px-3 py-3 sm:px-5 sm:py-4">
+                <div class="flex items-center gap-2 sm:gap-3">
                   <span class="text-[#adbbc6]">{item.symbolicValue}</span>
-                  <div class="h-2 w-24 rounded-full bg-[#8a8fa3]/10">
+                  <div class="h-2 w-16 rounded-full bg-[#8a8fa3]/10 sm:w-24">
                     <div
                       class="h-full rounded-full bg-gradient-to-r from-[#d8bfa0] to-[#8f6346]"
                       style={`width: ${item.symbolicScore}%`}

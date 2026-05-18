@@ -1,6 +1,68 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+const microeconomicFactors = [
+  {
+    title: "3.1 Demand conditions",
+    signal: "Trend-sensitive demand",
+    detail: "Demand rises when Samba appears on social media, influencer outfits, and fashion feeds. If newer trendy products become more visible, demand can soften."
+  },
+  {
+    title: "3.2 Price elasticity",
+    signal: "Relatively elastic demand",
+    detail: "Consumers have many sneaker alternatives, so price increases can push some buyers toward substitutes. Brand loyalty and differentiation reduce this pressure, but do not remove it."
+  },
+  {
+    title: "3.3 Competition level",
+    signal: "Intense competition",
+    detail: "The sneaker industry includes many brands selling similar lifestyle products, so Adidas competes through fashion, branding, heritage, and consumer perception."
+  },
+  {
+    title: "3.4 Consumer behavior",
+    signal: "Emotion and identity",
+    detail: "Many consumers buy Samba because they associate it with style, social trends, and symbolic value, not only because of its practical use."
+  }
+];
+
+const visualDemandImages = [
+  {
+    src: "/images/Photos for the website/ADIDAS POSTER.jpg",
+    alt: "Adidas poster-style Samba visual",
+    label: "Brand memory",
+    detail: "A poster-like visual makes the product easier to remember and recognize."
+  },
+  {
+    src: "/images/Photos for the website/Last Call for School Styles.jpg",
+    alt: "Adidas Samba school style campaign visual",
+    label: "Campus adoption",
+    detail: "Back-to-school styling connects Samba with Gen Z daily routines."
+  },
+  {
+    src: "/images/Photos for the website/Samba Shoes _ adidas US.jpg",
+    alt: "Adidas Samba product detail visual",
+    label: "Product proof",
+    detail: "Clean product photography reinforces quality and low-profile design."
+  },
+  {
+    src: "/images/Photos for the website/adidas original samba.jpg",
+    alt: "Original Adidas Samba lifestyle visual",
+    label: "Heritage cue",
+    detail: "Classic styling supports the idea that Samba is timeless, not temporary."
+  },
+  {
+    src: "/images/Photos for the website/Samba brillos.jpg",
+    alt: "Adidas Samba metallic styling visual",
+    label: "Trend variation",
+    detail: "Color and finish variations extend demand into fashion-led segments."
+  },
+  {
+    src: "/images/Photos for the website/Adidas Samba OG _ Iconic Best Seller.jpg",
+    alt: "Adidas Samba OG best seller product visual",
+    label: "Social validation",
+    detail: "Best-seller framing increases perceived safety and purchase confidence."
+  }
+];
+
 const competitorChartData = [
   { brand: "Adidas Samba", brandValue: "95/100", brandScore: 95 },
   { brand: "Nike Cortez", brandValue: "90/100", brandScore: 90 },
@@ -26,16 +88,100 @@ const academicSummary = [
 ---
 
 <BaseLayout
-  title="Adidas Samba | Economic Analysis and Data Visualization"
-  description="Dedicated economic analysis page with demand elasticity, monopolistic competition visual explanation, and final academic conclusion."
+  title="Adidas Samba | Microeconomic Analysis"
+  description="Demand conditions, elasticity, competition, consumer behavior, and data visualization for Adidas Samba."
 >
   <section class="page-intro">
-    <p class="section-kicker mb-3 text-[#adbbc6]">Section 04</p>
-    <h1 class="section-title mb-4 text-[#ececec]">Economic Analysis and Data Visualization</h1>
+    <p class="section-kicker mb-3 text-[#adbbc6]">Section 03</p>
+    <h1 class="section-title mb-4 text-[#ececec]">Microeconomic Analysis</h1>
     <p class="muted-copy max-w-3xl text-[#adbbc6]">
-      This page provides visual academic support for the project’s core microeconomic argument:
-      product differentiation and symbolic value create measurable pricing power in monopolistic competition.
+      This page explains demand, elasticity, competition, and consumer behavior, then supports those ideas
+      with simple visual evidence for the Adidas Samba market case.
     </p>
+  </section>
+
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="mb-6">
+      <p class="section-kicker mb-3 text-[#adbbc6]">Visual demand board</p>
+      <h2 class="section-title mb-4 text-[#ececec]">When style becomes an economic signal</h2>
+      <p class="max-w-4xl leading-relaxed text-[#adbbc6]">
+        These campaign-style visuals show why demand is not only about comfort. Samba becomes desirable
+        when customers can imagine it in school, streetwear, product photography, and trend-focused outfits.
+      </p>
+    </div>
+
+    <div class="grid gap-5 lg:grid-cols-[1.08fr_0.92fr]">
+      <article class="relative min-h-[360px] overflow-hidden rounded-[1.5rem] border border-[#8a8fa3]/18 bg-[#0e1424] shadow-[0_36px_100px_-45px_rgba(0,0,0,0.9)] sm:min-h-[460px] sm:rounded-[2rem] lg:min-h-[520px]">
+        <img
+          src={visualDemandImages[0].src}
+          alt={visualDemandImages[0].alt}
+          class="absolute inset-0 h-full w-full object-cover"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0e1424] via-[#0e1424]/42 to-transparent"></div>
+        <div class="relative flex min-h-[360px] flex-col justify-between p-5 sm:min-h-[460px] sm:p-8 lg:min-h-[520px]">
+          <div class="w-fit rounded-full border border-[#ececec]/20 bg-[#0e1424]/70 px-4 py-2 text-xs uppercase tracking-[0.2em] text-[#ececec] backdrop-blur-md">
+            {visualDemandImages[0].label}
+          </div>
+          <div class="max-w-xl">
+            <h3 class="text-2xl font-semibold leading-tight tracking-tight text-[#ececec] sm:text-4xl">
+              A sneaker with billboard-level recognition
+            </h3>
+            <p class="mt-4 text-sm leading-relaxed text-[#d7dde4] sm:text-base">
+              {visualDemandImages[0].detail} In monopolistic competition, this visual identity helps Adidas
+              defend attention even when consumers have many substitutes.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        {visualDemandImages.slice(1).map((image, index) => (
+          <article class:list={[
+            "group overflow-hidden rounded-3xl border border-[#8a8fa3]/14 bg-[#0e1424]/70 shadow-[0_28px_80px_-45px_rgba(0,0,0,0.85)]",
+            index === 0 && "sm:col-span-2",
+            index === 3 && "sm:col-span-2"
+          ]}>
+            <div class:list={[
+              "relative overflow-hidden",
+              index === 0 || index === 3 ? "aspect-[16/9] sm:aspect-[16/8.5]" : "aspect-[16/11] sm:aspect-[4/5]"
+            ]}>
+              <img
+                src={image.src}
+                alt={image.alt}
+                class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0e1424]/80 via-transparent to-transparent opacity-80"></div>
+            </div>
+            <div class="p-4">
+              <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">{image.label}</p>
+              <p class="mt-2 text-sm leading-relaxed text-[#ececec]">{image.detail}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="mb-6">
+      <p class="section-kicker mb-3 text-[#adbbc6]">Microeconomic conditions</p>
+      <h2 class="section-title mb-4 text-[#ececec]">What drives demand for Adidas Samba?</h2>
+      <p class="max-w-4xl leading-relaxed text-[#adbbc6]">
+        Samba demand is shaped by a mix of price, substitute availability, fashion cycles, and identity-based
+        consumer behavior. This makes the product economically interesting because it is practical and symbolic.
+      </p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2">
+      {microeconomicFactors.map((factor) => (
+        <article class="glass-card p-6 transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/40">
+          <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">{factor.title}</p>
+          <h3 class="mt-2 text-xl font-semibold text-[#ececec]">{factor.signal}</h3>
+          <p class="mt-3 text-sm leading-relaxed text-[#adbbc6]">{factor.detail}</p>
+        </article>
+      ))}
+    </div>
   </section>
 
   <section class="section-shell pb-16 sm:pb-18">
@@ -57,11 +203,12 @@ const academicSummary = [
           <path d="M52 54 C114 92, 195 132, 328 186" fill="none" stroke="#b8c1cc" stroke-width="4" stroke-dasharray="8 6"></path>
           <text x="8" y="26" fill="#d4d4d8" font-size="11">Price</text>
           <text x="274" y="210" fill="#d4d4d8" font-size="11">Quantity demanded</text>
-          <text x="86" y="49" fill="#d4bc9e" font-size="11">Samba demand (Eᵈ ≈ -0.7)</text>
-          <text x="110" y="130" fill="#b8c1cc" font-size="11">Generic demand (Eᵈ ≈ -1.5)</text>
+          <text x="86" y="49" fill="#d4bc9e" font-size="11">Samba demand: lower elasticity</text>
+          <text x="110" y="130" fill="#b8c1cc" font-size="11">Generic demand: higher elasticity</text>
         </svg>
         <p class="mt-4 sm:mt-6 text-sm leading-relaxed text-[#adbbc6]">
-          Samba demand is less elastic than generic sneakers because symbolic value delays substitution behavior.
+          Samba demand is still relatively elastic because substitutes exist, but brand meaning can delay
+          substitution compared with generic sneakers.
         </p>
       </article>
 
@@ -98,7 +245,7 @@ const academicSummary = [
         <div class="space-y-4 sm:space-y-6 rounded-2xl border border-[#8a8fa3]/10 bg-[#374254]/30 p-4 sm:p-6">
           {competitorChartData.map((item) => (
             <div>
-              <div class="mb-2 flex items-center justify-between text-sm text-[#adbbc6]">
+              <div class="mb-2 flex items-center justify-between gap-3 text-sm text-[#adbbc6]">
                 <span>{item.brand}</span>
                 <span>{item.brandValue}</span>
               </div>
@@ -118,7 +265,21 @@ const academicSummary = [
     </div>
   </section>
 
-      </article>
+  <section class="section-shell pb-20">
+    <div class="grid gap-4 md:grid-cols-3">
+      {academicSummary.map((item) => (
+        <article class="glass-card p-5">
+          <h3 class="text-lg font-semibold text-[#ececec]">{item.title}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-[#adbbc6]">{item.detail}</p>
+        </article>
+      ))}
+    </div>
+    <div class="mt-6 rounded-2xl border border-[#8a8fa3]/12 bg-[#0e1424]/60 p-5">
+      <p class="text-sm leading-relaxed text-[#adbbc6]">
+        Conclusion: Adidas Samba fits monopolistic competition because it faces many substitutes, but its
+        differentiated design and cultural meaning give Adidas limited pricing power and stronger non-price
+        competition tools.
+      </p>
     </div>
   </section>
 </BaseLayout>

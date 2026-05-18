@@ -1,22 +1,56 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
+const productFeatures = [
+  {
+    title: "Soft leather upper",
+    detail: "A flexible upper gives the shoe a premium daily-wear feel while keeping the silhouette slim."
+  },
+  {
+    title: "Suede T-toe overlays",
+    detail: "The T-toe construction is one of the clearest visual signals that separates Samba from substitutes."
+  },
+  {
+    title: "3-Stripes branding",
+    detail: "Visible brand identity turns the sneaker into both a functional product and a social signal."
+  },
+  {
+    title: "Gum rubber outsole",
+    detail: "The outsole connects the model to its indoor football origin and reinforces its classic look."
+  }
+];
+
+const targetSegments = [
+  {
+    title: "Gen Z and Millennials",
+    detail: "Primary buyers are ages 15-40 and represent an important share of lifestyle sneaker demand."
+  },
+  {
+    title: "Urban consumers",
+    detail: "City-based customers value the Samba because it works across school, work, social, and streetwear contexts."
+  },
+  {
+    title: "Middle-to-high disposable income",
+    detail: "The price is reachable but still premium enough to support identity, quality, and trend value."
+  }
+];
+
 const valueDrivers = [
   {
-    title: "Cultural legacy",
-    detail: "A long product history increases credibility and keeps the model relevant across generations."
+    title: "Timeless aesthetic",
+    detail: "The model avoids a short trend cycle by using a clean low-profile design that stays wearable across seasons."
   },
   {
-    title: "Design recognizability",
-    detail: "The low-profile silhouette and gum sole provide immediate brand identification."
+    title: "Versatile styling",
+    detail: "Samba pairs easily with casual, smart-casual, sport-inspired, and fashion-focused outfits."
   },
   {
-    title: "Social signaling",
-    detail: "Consumers use Samba to communicate taste, trend awareness, and belonging."
+    title: "Lightweight daily use",
+    detail: "The slim build feels flexible and practical, which supports repeated everyday use."
   },
   {
-    title: "Lifestyle versatility",
-    detail: "The model transitions across casual, smart-casual, and fashion-driven outfits."
+    title: "Brand heritage",
+    detail: "Its history in indoor football, cycling, golf, and streetwear gives the shoe meaning beyond basic utility."
   }
 ];
 
@@ -25,47 +59,65 @@ const prestigeIndicators = [
   { value: "Global", label: "Cross-market desirability" },
   { value: "Low", label: "Substitution speed under loyal demand" }
 ];
+
+const productGallery = [
+  {
+    src: "/images/Photos for the website/Samba Shoes _ adidas US.jpg",
+    alt: "Adidas Samba product detail close-up",
+    title: "T-toe clarity",
+    detail: "The recognizable front overlay makes the product identifiable even without reading the brand name."
+  },
+  {
+    src: "/images/Photos for the website/adidas original samba.jpg",
+    alt: "Original Adidas Samba lifestyle product visual",
+    title: "Low-profile silhouette",
+    detail: "The slim shape keeps the shoe easy to style across casual, school, and streetwear outfits."
+  },
+  {
+    src: "/images/Photos for the website/Adidas Samba OG _ Iconic Best Seller.jpg",
+    alt: "Adidas Samba OG product visual",
+    title: "Best-seller trust",
+    detail: "Product popularity becomes a signal of quality and reduces risk for new buyers."
+  }
+];
 ---
 
 <BaseLayout
-  title="Adidas Samba | Value Proposition"
-  description="Premium product differentiation and value proposition analysis for Adidas Samba."
+  title="Adidas Samba | Product and Value Proposition"
+  description="Product description, target market, and value proposition analysis for Adidas Samba."
 >
   <section class="page-intro">
     <p class="section-kicker mb-3 text-[#adbbc6]">Section 01</p>
-    <h1 class="section-title mb-4 text-[#ececec]">Value Proposition</h1>
+    <h1 class="section-title mb-4 text-[#ececec]">Product or Service</h1>
     <p class="muted-copy max-w-3xl text-[#adbbc6]">
-      This page isolates the premium product proposition behind Adidas Samba and explains why
-      differentiation creates durable market preference in monopolistic competition.
+      This page defines Adidas Samba as the selected product, identifies its target market,
+      and explains why its value proposition is stronger than a generic sneaker alternative.
     </p>
   </section>
 
   <section class="section-shell pb-16 sm:pb-18">
     <div class="glass-card p-6 sm:p-8 md:p-10">
-      {/* Cambiado lg:items-start por lg:items-stretch para que ambas columnas midan lo mismo */}
       <div class="grid gap-8 md:gap-10 lg:grid-cols-2 lg:items-stretch">
-        
-        {/* Imagen - Orden 2 en mobile (abajo), orden 1 en lg (izquierda) */}
-        {/* Agregada la clase h-full al contenedor y a la imagen */}
-        <div class="order-2 lg:order-1 h-full">
+        <div class="order-2 aspect-[16/11] h-full overflow-hidden rounded-2xl sm:aspect-[4/3] sm:rounded-3xl lg:order-1 lg:aspect-auto">
           <img
-            src="/images/Samba2.jpg"
+            src={productGallery[0].src}
             alt="Adidas Samba premium campaign visual"
-            class="w-full h-full rounded-2xl sm:rounded-3xl border border-[#8a8fa3]/10 object-cover shadow-[0_30px_80px_-38px_rgba(0,0,0,0.9)]"
+            class="h-full w-full border border-[#8a8fa3]/10 object-cover shadow-[0_30px_80px_-38px_rgba(0,0,0,0.9)]"
+            loading="eager"
+            decoding="async"
           />
         </div>
 
-        {/* Bloque de texto - Orden 1 en mobile (arriba), orden 2 en lg (derecha) */}
         <div class="order-1 lg:order-2">
-          <p class="section-kicker mb-3 text-[#adbbc6]">Premium product showcase</p>
-          <h2 class="section-title mb-6 text-[#ececec]">Differentiation that consumers can feel and display</h2>
+          <p class="section-kicker mb-3 text-[#adbbc6]">1.1 Product description</p>
+          <h2 class="section-title mb-6 text-[#ececec]">A recognizable low-profile sneaker built for daily wear</h2>
           <p class="mb-4 leading-relaxed text-[#adbbc6]">
-            Samba competes with many substitutes, yet consumers repeatedly choose it because the value proposition
-            combines function with identity. Buyers are not only purchasing footwear utility; they are purchasing
-            heritage, aesthetic consistency, and social meaning.
+            Adidas Samba is recognized by its soft leather upper, suede T-toe overlays, 3-Stripes branding,
+            and signature gum rubber outsole. Its style is low-profile, versatile, and suitable for everyday use.
           </p>
           <p class="mb-6 rounded-2xl border border-[#8a8fa3]/30 bg-[#374254]/10 px-4 py-3 text-sm text-[#adbbc6]">
-            Emotional marketing hook: Adidas Samba is positioned as a timeless symbol rather than a seasonal product.
+            Adidas presents the Samba as an indoor football classic that now appears in cycling, golf,
+            and streetwear styles.
           </p>
           <div class="grid gap-3 sm:grid-cols-3">
             {prestigeIndicators.map((item) => (
@@ -76,26 +128,98 @@ const prestigeIndicators = [
             ))}
           </div>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="mb-6">
+      <p class="section-kicker mb-3 text-[#adbbc6]">Design evidence</p>
+      <h2 class="section-title mb-4 text-[#ececec]">The product details that make Samba memorable</h2>
+      <p class="max-w-4xl leading-relaxed text-[#adbbc6]">
+        These visuals support the value proposition: customers are buying a practical sneaker, but also a
+        recognizable design language that carries social meaning.
+      </p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-3">
+      {productGallery.map((item) => (
+        <article class="group overflow-hidden rounded-3xl border border-[#8a8fa3]/14 bg-[#0e1424]/70 shadow-[0_28px_80px_-45px_rgba(0,0,0,0.85)]">
+          <div class="aspect-[16/11] overflow-hidden sm:aspect-[4/5]">
+            <img
+              src={item.src}
+              alt={item.alt}
+              class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="text-lg font-semibold text-[#ececec]">{item.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#adbbc6]">{item.detail}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="mb-6">
+      <p class="section-kicker mb-3 text-[#adbbc6]">Product identity</p>
+      <h2 class="section-title mb-4 text-[#ececec]">Physical features that create differentiation</h2>
+      <p class="max-w-4xl leading-relaxed text-[#adbbc6]">
+        In monopolistic competition, small product differences matter because they help buyers recognize,
+        remember, and prefer one brand over another.
+      </p>
+    </div>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      {productFeatures.map((feature) => (
+        <article class="glass-card p-5 transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/40">
+          <h3 class="panel-title text-[#ececec]">{feature.title}</h3>
+          <p class="text-sm leading-relaxed text-[#adbbc6]">{feature.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-shell pb-16 sm:pb-18">
+    <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+      <article class="glass-card p-6 md:p-8">
+        <p class="section-kicker mb-3 text-[#adbbc6]">1.2 Target market</p>
+        <h2 class="mb-4 text-2xl font-semibold tracking-tight text-[#ececec] sm:text-3xl">Who is most likely to buy Samba?</h2>
+        <p class="leading-relaxed text-[#adbbc6]">
+          The strongest customer segments are Gen Z and Millennials, especially urban consumers with
+          middle-to-high disposable income who care about fashion, identity, and brand image.
+        </p>
+      </article>
+      <div class="grid gap-4 sm:grid-cols-3 lg:grid-cols-3">
+        {targetSegments.map((segment) => (
+          <article class="rounded-2xl border border-[#8a8fa3]/12 bg-[#0e1424]/60 p-5 shadow-[0_24px_70px_-45px_rgba(0,0,0,0.9)]">
+            <h3 class="text-base font-semibold text-[#ececec]">{segment.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-[#adbbc6]">{segment.detail}</p>
+          </article>
+        ))}
       </div>
     </div>
   </section>
 
   <section class="section-shell pb-20">
     <div class="mb-6">
-      <p class="section-kicker mb-3 text-[#adbbc6]">Product prestige indicators</p>
-      <h2 class="section-title mb-4 text-[#ececec]">Core value drivers of Adidas Samba demand</h2>
+      <p class="section-kicker mb-3 text-[#adbbc6]">1.3 Value proposition</p>
+      <h2 class="section-title mb-4 text-[#ececec]">Why customers choose Samba instead of substitutes</h2>
+      <p class="max-w-4xl leading-relaxed text-[#adbbc6]">
+        Samba offers a rare combination of timeless style, versatility, and slim aesthetics. The product is not
+        only comfortable footwear; it is a simple way for customers to express fashion awareness and brand taste.
+      </p>
     </div>
     <div class="grid gap-4 md:grid-cols-2">
       {valueDrivers.map((driver) => (
-        <article class="glass-card p-6 border border-[#8a8fa3]/20 bg-[#374254] transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/40">
+        <article class="glass-card border border-[#8a8fa3]/20 bg-[#374254] p-6 transition duration-300 hover:-translate-y-0.5 hover:border-[#8a8fa3]/40">
           <h3 class="panel-title text-[#ececec]">{driver.title}</h3>
           <p class="text-sm leading-relaxed text-[#adbbc6]">{driver.detail}</p>
         </article>
       ))}
     </div>
     <div class="mt-7">
-      <a href="/market-pricing" class="cta-secondary border border-[#8a8fa3] bg-[#374254] text-[#ececec] hover:text-[#adbbc6]">Continue to pricing and competitor analysis</a>
+      <a href="/market-pricing" class="cta-secondary border border-[#8a8fa3] bg-[#374254] text-[#ececec] hover:text-[#adbbc6]">Continue to market structure analysis</a>
     </div>
   </section>
 </BaseLayout>

@@ -2,32 +2,50 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const prestigeSignals = [
-  { value: "70+ years", label: "Heritage credibility" },
-  { value: "$100–$130", label: "Premium price corridor" },
-  { value: "Global icon", label: "Symbolic social status" },
-  { value: "A+ framing", label: "Professor-ready presentation" }
+  { value: "15-40", label: "Core Gen Z and Millennial market" },
+  { value: "$100-$130", label: "Accessible premium price corridor" },
+  { value: "Many firms", label: "Monopolistic competition setting" },
+  { value: "Trend-led", label: "Demand shaped by style and social proof" }
 ];
 
 const sectionPages = [
   {
     href: "/value-proposition",
-    title: "Value Proposition",
-    detail: "Premium product storytelling, differentiation logic, and prestige indicators."
+    title: "1. Product or Service",
+    detail: "Product description, target market, and value proposition for Adidas Samba."
   },
   {
     href: "/market-pricing",
-    title: "Pricing & Competitors",
-    detail: "Price ranges, brand-value benchmarking, and structured competitor comparison."
-  },
-  {
-    href: "/campaigns",
-    title: "Campaigns & Video",
-    detail: "Influencer strategy, social proof, trend simulation, and embedded media."
+    title: "2. Market Structure Analysis",
+    detail: "Monopolistic competition, differentiated product logic, barriers to entry, and pricing power."
   },
   {
     href: "/economic-analysis",
-    title: "Economic Analysis",
-    detail: "Demand elasticity, monopolistic competition visuals, and final academic closure."
+    title: "3. Microeconomic Analysis",
+    detail: "Demand conditions, elasticity, competition level, consumer behavior, and visual evidence."
+  },
+  {
+    href: "/campaigns",
+    title: "4. Marketing Strategy",
+    detail: "Pricing strategy, promotion choices, positioning, influencer strategy, and campaign metrics."
+  }
+];
+
+const heroPreviewImages = [
+  {
+    src: "/images/Photos for the website/ADIDAS POSTER.jpg",
+    alt: "Adidas Samba poster visual",
+    label: "Visual identity"
+  },
+  {
+    src: "/images/Photos for the website/Samba Shoes _ adidas US.jpg",
+    alt: "Adidas Samba product detail",
+    label: "Product proof"
+  },
+  {
+    src: "/images/Photos for the website/Last Call for School Styles.jpg",
+    alt: "Adidas Samba school style campaign",
+    label: "Lifestyle demand"
   }
 ];
 ---
@@ -36,11 +54,11 @@ const sectionPages = [
   title="Adidas Samba | Premium Monopolistic Competition Project"
   description="Premium overview page for a multi-page university project analyzing Adidas Samba in monopolistic competition."
 >
-  <section class="section-shell pb-16 pt-12 sm:pb-20 sm:pt-14 md:pb-24 md:pt-24">
+  <section class="section-shell pb-14 pt-10 sm:pb-18 sm:pt-14 md:pb-22 md:pt-20 lg:pb-24 lg:pt-24">
     <div class="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
       <div class="space-y-6 sm:space-y-7">
         <p class="section-kicker">University of Colima Microeconomics.</p>
-        <h1 class="text-4xl font-semibold leading-[0.92] tracking-tight text-[#ececec] sm:text-5xl md:text-6xl lg:text-7xl">
+        <h1 class="text-[clamp(2.35rem,9vw,4.5rem)] font-semibold leading-[0.95] tracking-tight text-[#ececec]">
           Adidas Samba:
           <br />
           Premium Identity in
@@ -48,13 +66,13 @@ const sectionPages = [
           Monopolistic Competition
         </h1>
         <p class="max-w-2xl text-base leading-relaxed text-[#adbbc6] sm:text-lg md:text-xl">
-          This project explains how product differentiation, brand loyalty, and cultural positioning
-          create pricing power despite many close substitutes.
+          This project explains how Adidas Samba uses product differentiation, brand loyalty,
+          and cultural positioning to compete in a market with many close substitutes.
         </p>
         <p class="max-w-xl rounded-2xl border border-[#8a8fa3]/30 bg-[#374254]/10 px-4 py-3 text-sm text-[#adbbc6]">
           Core thesis: consumers purchase symbolic value, not only utility.
         </p>
-        <div class="flex flex-col sm:flex-row gap-3">
+        <div class="flex flex-col gap-3 sm:flex-row">
           <a href="/economic-analysis" class="cta-primary text-center">Open data visualization</a>
           <a href="/campaigns" class="cta-secondary text-center">Open campaign strategy</a>
         </div>
@@ -70,12 +88,30 @@ const sectionPages = [
 
       <div class="relative">
         <div class="absolute -inset-10 -z-10 rounded-[3rem] bg-[radial-gradient(circle_at_30%_20%,rgba(212,188,158,0.35),transparent_62%)] blur-2xl"></div>
-          <article class="glass-card p-4 sm:p-5">
-          <img
-            src="/images/Samba.jpg"
-            alt="Adidas Samba premium product view"
-            class="h-full w-full rounded-[1.8rem] border border-[#8a8fa3]/12 object-cover shadow-[0_40px_120px_-45px_rgba(0,0,0,0.95)]"
-          />
+        <article class="glass-card p-4 sm:p-5">
+          <div class="grid gap-3">
+            <div class="relative aspect-[4/3] overflow-hidden rounded-2xl border border-[#8a8fa3]/12 shadow-[0_40px_120px_-45px_rgba(0,0,0,0.95)] sm:aspect-[16/11] sm:rounded-[1.8rem] lg:aspect-[4/3]">
+              <img
+                src={heroPreviewImages[0].src}
+                alt={heroPreviewImages[0].alt}
+                class="h-full w-full object-cover"
+                fetchpriority="high"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0e1424]/80 via-transparent to-transparent"></div>
+              <p class="absolute bottom-3 left-3 max-w-[calc(100%-1.5rem)] rounded-full border border-[#ececec]/20 bg-[#0e1424]/65 px-3 py-1.5 text-[11px] uppercase tracking-[0.16em] text-[#ececec] backdrop-blur-md sm:bottom-4 sm:left-4 sm:text-xs sm:tracking-[0.18em]">
+                {heroPreviewImages[0].label}
+              </p>
+            </div>
+            <div class="grid gap-3 sm:grid-cols-2">
+              {heroPreviewImages.slice(1).map((image) => (
+                <div class="relative aspect-[16/9] overflow-hidden rounded-2xl border border-[#8a8fa3]/12 bg-[#0e1424] sm:aspect-[16/10]">
+                  <img src={image.src} alt={image.alt} class="h-full w-full object-cover" loading="lazy" decoding="async" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#0e1424]/75 via-transparent to-transparent"></div>
+                  <p class="absolute bottom-3 left-3 text-[11px] uppercase tracking-[0.18em] text-[#ececec]">{image.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
           <div class="mt-4 grid gap-3 sm:grid-cols-3">
             <div class="rounded-2xl border border-[#8a8fa3]/12 bg-[#374254]/30 p-3">
               <p class="text-[10px] uppercase tracking-[0.18em] text-[#adbbc6]">Positioning</p>
