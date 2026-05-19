@@ -274,7 +274,13 @@ const sizes = ["5", "6", "7", "8", "9", "10", "11"];
     }
 
     .product-box {
+      background:
+        radial-gradient(circle at 50% 48%, rgba(216, 191, 160, 0.14), transparent 34%),
+        #0e1424;
+      box-sizing: border-box;
+      object-fit: contain;
       opacity: 1;
+      padding: clamp(0.55rem, 2vw, 1rem);
       transform: scale(1);
     }
 

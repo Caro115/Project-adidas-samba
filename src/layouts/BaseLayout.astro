@@ -149,6 +149,8 @@ const year = new Date().getFullYear();
       const mobileMenu = document.getElementById("mobile-menu");
       const openIcon = document.getElementById("mobile-menu-open-icon");
       const closeIcon = document.getElementById("mobile-menu-close-icon");
+      const projectButton = document.getElementById("project-menu-button");
+      const projectMenu = document.getElementById("project-menu");
 
       mobileButton?.addEventListener("click", () => {
         const expanded = mobileButton.getAttribute("aria-expanded") === "true";
@@ -158,12 +160,26 @@ const year = new Date().getFullYear();
         closeIcon?.classList.toggle("hidden", expanded);
       });
 
+      projectButton?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const expanded = projectButton.getAttribute("aria-expanded") === "true";
+        projectButton.setAttribute("aria-expanded", String(!expanded));
+        projectMenu?.classList.toggle("hidden", expanded);
+      });
+
+      document.addEventListener("click", () => {
+        projectButton?.setAttribute("aria-expanded", "false");
+        projectMenu?.classList.add("hidden");
+      });
+
       document.addEventListener("keydown", (event) => {
         if (event.key !== "Escape") return;
         mobileButton?.setAttribute("aria-expanded", "false");
         mobileMenu?.classList.add("hidden");
         openIcon?.classList.remove("hidden");
         closeIcon?.classList.add("hidden");
+        projectButton?.setAttribute("aria-expanded", "false");
+        projectMenu?.classList.add("hidden");
       });
     </script>
   </body>
