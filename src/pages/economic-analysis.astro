@@ -110,48 +110,26 @@ const academicSummary = [
       </p>
     </div>
 
-    <div class="grid gap-5 lg:grid-cols-[1.08fr_0.92fr]">
-      <article class="overflow-hidden rounded-[1.5rem] border border-[#8a8fa3]/18 bg-[#0e1424] shadow-[0_36px_100px_-45px_rgba(0,0,0,0.9)] sm:rounded-[2rem] lg:self-start">
-        <div class="aspect-[4/5] bg-[#0e1424] p-3 sm:p-4">
-          <img
-            src={visualDemandImages[0].src}
-            alt={visualDemandImages[0].alt}
-            class="h-full w-full object-contain"
-            loading="lazy"
-          />
-        </div>
-        <div class="border-t border-[#8a8fa3]/14 p-5 sm:p-6">
-          <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">{visualDemandImages[0].label}</p>
-          <p class="mt-2 text-sm leading-relaxed text-[#ececec]">{visualDemandImages[0].detail}</p>
-        </div>
-      </article>
-
-      <div class="grid gap-4 sm:grid-cols-2">
-        {visualDemandImages.slice(1).map((image, index) => (
-          <article class:list={[
-            "group overflow-hidden rounded-3xl border border-[#8a8fa3]/14 bg-[#0e1424]/70 shadow-[0_28px_80px_-45px_rgba(0,0,0,0.85)]",
-            index === 0 && "sm:col-span-2",
-            index === 3 && "sm:col-span-2"
-          ]}>
-            <div class:list={[
-              "relative overflow-hidden",
-              index === 0 || index === 3 ? "aspect-[16/9] sm:aspect-[16/8.5]" : "aspect-[16/11] sm:aspect-[4/5]"
-            ]}>
-              <img
-                src={image.src}
-                alt={image.alt}
-                class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-[#0e1424]/80 via-transparent to-transparent opacity-80"></div>
-            </div>
-            <div class="p-4">
-              <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">{image.label}</p>
-              <p class="mt-2 text-sm leading-relaxed text-[#ececec]">{image.detail}</p>
-            </div>
-          </article>
-        ))}
-      </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {visualDemandImages.map((image, index) => (
+        <article class="group flex h-full flex-col overflow-hidden rounded-3xl border border-[#8a8fa3]/14 bg-[#0e1424]/70 shadow-[0_28px_80px_-45px_rgba(0,0,0,0.85)]">
+          <div class="relative aspect-[4/5] overflow-hidden bg-[#0e1424]">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class:list={[
+                "h-full w-full transition duration-500 group-hover:scale-[1.03]",
+                index === 0 ? "object-contain p-3 sm:p-4" : "object-cover"
+              ]}
+              loading="lazy"
+            />
+          </div>
+          <div class="flex flex-1 flex-col justify-between border-t border-[#8a8fa3]/14 p-4">
+            <p class="text-[11px] uppercase tracking-[0.18em] text-[#adbbc6]">{image.label}</p>
+            <p class="mt-2 text-sm leading-relaxed text-[#ececec]">{image.detail}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
